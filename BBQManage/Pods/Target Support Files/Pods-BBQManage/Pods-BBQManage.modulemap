@@ -1,0 +1,6 @@
+framework module Pods_BBQManage {
+  umbrella header "Pods-BBQManage-umbrella.h"
+
+  export *
+  module * { export * }
+}

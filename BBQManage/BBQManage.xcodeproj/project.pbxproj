@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023735571EC6D2B3002BD0B7 /* AppDelegate.swift */; };
+		0237355D1EC6D2B3002BD0B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0237355B1EC6D2B3002BD0B7 /* Main.storyboard */; };
+		0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */; };
+		023735621EC6D2B3002BD0B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023735601EC6D2B3002BD0B7 /* LaunchScreen.storyboard */; };
+		0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */; };
+		482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585B91EED1E8B00E31424 /* BanAnCell.swift */; };
+		482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BB1EED1EAF00E31424 /* DSBanAnController.swift */; };
+		482585BE1EED222900E31424 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BD1EED222900E31424 /* Global.swift */; };
+		482585C21EED27A700E31424 /* Bulleted List-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585BF1EED27A700E31424 /* Bulleted List-25.png */; };
+		482585C31EED27A700E31424 /* Restart-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585C01EED27A700E31424 /* Restart-25.png */; };
+		482585C41EED27A700E31424 /* Search-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585C11EED27A700E31424 /* Search-25.png */; };
+		482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585C51EED32BB00E31424 /* DangNhapController.swift */; };
+		AB115E5C44005C56693E466C /* Pods_BBQManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		023735541EC6D2B3002BD0B7 /* BBQManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		023735571EC6D2B3002BD0B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0237355C1EC6D2B3002BD0B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		023735611EC6D2B3002BD0B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		023735631EC6D2B3002BD0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		482585B91EED1E8B00E31424 /* BanAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanAnCell.swift; sourceTree = "<group>"; };
+		482585BB1EED1EAF00E31424 /* DSBanAnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSBanAnController.swift; sourceTree = "<group>"; };
+		482585BD1EED222900E31424 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		482585BF1EED27A700E31424 /* Bulleted List-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bulleted List-25.png"; sourceTree = "<group>"; };
+		482585C01EED27A700E31424 /* Restart-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart-25.png"; sourceTree = "<group>"; };
+		482585C11EED27A700E31424 /* Search-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-25.png"; sourceTree = "<group>"; };
+		482585C51EED32BB00E31424 /* DangNhapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangNhapController.swift; sourceTree = "<group>"; };
+		927EE59A84F4EB0074117DE5 /* Pods-BBQManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage.debug.xcconfig"; sourceTree = "<group>"; };
+		AD085B7E0CE0E8D4538925F0 /* Pods-BBQManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQManage.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage.release.xcconfig"; sourceTree = "<group>"; };
+		F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBQManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		023735511EC6D2B3002BD0B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB115E5C44005C56693E466C /* Pods_BBQManage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0237354B1EC6D2B3002BD0B7 = {
+			isa = PBXGroup;
+			children = (
+				482585BD1EED222900E31424 /* Global.swift */,
+				023735561EC6D2B3002BD0B7 /* BBQManage */,
+				023735551EC6D2B3002BD0B7 /* Products */,
+				B3BC8A770595D5BA02C4A1B1 /* Pods */,
+				048FDB3D4E79FCE584B5A01F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		023735551EC6D2B3002BD0B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				023735541EC6D2B3002BD0B7 /* BBQManage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		023735561EC6D2B3002BD0B7 /* BBQManage */ = {
+			isa = PBXGroup;
+			children = (
+				482585B51EED1BB100E31424 /* Controller */,
+				482585B61EED1BB100E31424 /* Resource */,
+				482585B71EED1BB100E31424 /* View */,
+				023735571EC6D2B3002BD0B7 /* AppDelegate.swift */,
+				023735631EC6D2B3002BD0B7 /* Info.plist */,
+				023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */,
+			);
+			path = BBQManage;
+			sourceTree = "<group>";
+		};
+		048FDB3D4E79FCE584B5A01F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		482585B51EED1BB100E31424 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				482585B81EED1E2300E31424 /* BanAnController */,
+				482585C51EED32BB00E31424 /* DangNhapController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		482585B61EED1BB100E31424 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				482585BF1EED27A700E31424 /* Bulleted List-25.png */,
+				482585C01EED27A700E31424 /* Restart-25.png */,
+				482585C11EED27A700E31424 /* Search-25.png */,
+				0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		482585B71EED1BB100E31424 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				023735601EC6D2B3002BD0B7 /* LaunchScreen.storyboard */,
+				0237355B1EC6D2B3002BD0B7 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		482585B81EED1E2300E31424 /* BanAnController */ = {
+			isa = PBXGroup;
+			children = (
+				482585B91EED1E8B00E31424 /* BanAnCell.swift */,
+				482585BB1EED1EAF00E31424 /* DSBanAnController.swift */,
+			);
+			name = BanAnController;
+			sourceTree = "<group>";
+		};
+		B3BC8A770595D5BA02C4A1B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				927EE59A84F4EB0074117DE5 /* Pods-BBQManage.debug.xcconfig */,
+				AD085B7E0CE0E8D4538925F0 /* Pods-BBQManage.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		023735531EC6D2B3002BD0B7 /* BBQManage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 023735661EC6D2B3002BD0B7 /* Build configuration list for PBXNativeTarget "BBQManage" */;
+			buildPhases = (
+				49EB8BB62D6BA190B8C7A248 /* [CP] Check Pods Manifest.lock */,
+				023735501EC6D2B3002BD0B7 /* Sources */,
+				023735511EC6D2B3002BD0B7 /* Frameworks */,
+				023735521EC6D2B3002BD0B7 /* Resources */,
+				5C092A35A39C6E4AD229914D /* [CP] Embed Pods Frameworks */,
+				BFDFDBE0C4BEAA69B1FFF8D1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BBQManage;
+			productName = BBQManage;
+			productReference = 023735541EC6D2B3002BD0B7 /* BBQManage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0237354C1EC6D2B3002BD0B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Than Hoang Xuan Nghiep";
+				TargetAttributes = {
+					023735531EC6D2B3002BD0B7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0237354F1EC6D2B3002BD0B7 /* Build configuration list for PBXProject "BBQManage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0237354B1EC6D2B3002BD0B7;
+			productRefGroup = 023735551EC6D2B3002BD0B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				023735531EC6D2B3002BD0B7 /* BBQManage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		023735521EC6D2B3002BD0B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023735621EC6D2B3002BD0B7 /* LaunchScreen.storyboard in Resources */,
+				482585C21EED27A700E31424 /* Bulleted List-25.png in Resources */,
+				482585C41EED27A700E31424 /* Search-25.png in Resources */,
+				482585C31EED27A700E31424 /* Restart-25.png in Resources */,
+				0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */,
+				0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */,
+				0237355D1EC6D2B3002BD0B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49EB8BB62D6BA190B8C7A248 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C092A35A39C6E4AD229914D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFDFDBE0C4BEAA69B1FFF8D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		023735501EC6D2B3002BD0B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */,
+				482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */,
+				482585BE1EED222900E31424 /* Global.swift in Sources */,
+				023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */,
+				482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0237355B1EC6D2B3002BD0B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0237355C1EC6D2B3002BD0B7 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		023735601EC6D2B3002BD0B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				023735611EC6D2B3002BD0B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		023735641EC6D2B3002BD0B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		023735651EC6D2B3002BD0B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		023735671EC6D2B3002BD0B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927EE59A84F4EB0074117DE5 /* Pods-BBQManage.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BBQManage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team3.BBQManage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		023735681EC6D2B3002BD0B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD085B7E0CE0E8D4538925F0 /* Pods-BBQManage.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BBQManage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team3.BBQManage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0237354F1EC6D2B3002BD0B7 /* Build configuration list for PBXProject "BBQManage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023735641EC6D2B3002BD0B7 /* Debug */,
+				023735651EC6D2B3002BD0B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		023735661EC6D2B3002BD0B7 /* Build configuration list for PBXNativeTarget "BBQManage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023735671EC6D2B3002BD0B7 /* Debug */,
+				023735681EC6D2B3002BD0B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0237354C1EC6D2B3002BD0B7 /* Project object */;
+}
