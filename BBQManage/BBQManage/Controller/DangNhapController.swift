@@ -49,4 +49,5 @@ class DangNhapController: UIViewController {
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
-    }}
+    }
+}
