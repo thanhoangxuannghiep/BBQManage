@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023735571EC6D2B3002BD0B7 /* AppDelegate.swift */; };
-		0237355D1EC6D2B3002BD0B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0237355B1EC6D2B3002BD0B7 /* Main.storyboard */; };
 		0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */; };
-		023735621EC6D2B3002BD0B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023735601EC6D2B3002BD0B7 /* LaunchScreen.storyboard */; };
 		0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */; };
 		482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585B91EED1E8B00E31424 /* BanAnCell.swift */; };
 		482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BB1EED1EAF00E31424 /* DSBanAnController.swift */; };
@@ -19,15 +17,19 @@
 		482585C31EED27A700E31424 /* Restart-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585C01EED27A700E31424 /* Restart-25.png */; };
 		482585C41EED27A700E31424 /* Search-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585C11EED27A700E31424 /* Search-25.png */; };
 		482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585C51EED32BB00E31424 /* DangNhapController.swift */; };
+		48FE48EA1EF0218100388761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FE48E61EF0218100388761 /* LaunchScreen.storyboard */; };
+		48FE48EB1EF0218100388761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FE48E81EF0218100388761 /* Main.storyboard */; };
+		48FE48EE1EF0233600388761 /* LeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48ED1EF0233600388761 /* LeftMenuController.swift */; };
+		48FE48F11EF02A6800388761 /* BaoCaoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48F01EF02A6800388761 /* BaoCaoController.swift */; };
+		48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48F21EF02A7700388761 /* BaoCaoDetailController.swift */; };
+		48FE48F51EF02A9100388761 /* BaoCao_HoaDonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48F41EF02A9100388761 /* BaoCao_HoaDonCell.swift */; };
 		AB115E5C44005C56693E466C /* Pods_BBQManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		023735541EC6D2B3002BD0B7 /* BBQManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023735571EC6D2B3002BD0B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0237355C1EC6D2B3002BD0B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		023735611EC6D2B3002BD0B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		023735631EC6D2B3002BD0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		482585B91EED1E8B00E31424 /* BanAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanAnCell.swift; sourceTree = "<group>"; };
@@ -37,6 +39,12 @@
 		482585C01EED27A700E31424 /* Restart-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart-25.png"; sourceTree = "<group>"; };
 		482585C11EED27A700E31424 /* Search-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-25.png"; sourceTree = "<group>"; };
 		482585C51EED32BB00E31424 /* DangNhapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangNhapController.swift; sourceTree = "<group>"; };
+		48FE48E71EF0218100388761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BBQManage/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		48FE48E91EF0218100388761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BBQManage/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		48FE48ED1EF0233600388761 /* LeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuController.swift; sourceTree = "<group>"; };
+		48FE48F01EF02A6800388761 /* BaoCaoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaoCaoController.swift; sourceTree = "<group>"; };
+		48FE48F21EF02A7700388761 /* BaoCaoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaoCaoDetailController.swift; sourceTree = "<group>"; };
+		48FE48F41EF02A9100388761 /* BaoCao_HoaDonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaoCao_HoaDonCell.swift; sourceTree = "<group>"; };
 		927EE59A84F4EB0074117DE5 /* Pods-BBQManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage.debug.xcconfig"; sourceTree = "<group>"; };
 		AD085B7E0CE0E8D4538925F0 /* Pods-BBQManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQManage.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage.release.xcconfig"; sourceTree = "<group>"; };
 		F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBQManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +105,8 @@
 		482585B51EED1BB100E31424 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				48FE48EF1EF02A4B00388761 /* BaoCaoController */,
+				48FE48EC1EF0231C00388761 /* LeftMenuController */,
 				482585B81EED1E2300E31424 /* BanAnController */,
 				482585C51EED32BB00E31424 /* DangNhapController.swift */,
 			);
@@ -117,8 +127,8 @@
 		482585B71EED1BB100E31424 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				023735601EC6D2B3002BD0B7 /* LaunchScreen.storyboard */,
-				0237355B1EC6D2B3002BD0B7 /* Main.storyboard */,
+				48FE48E61EF0218100388761 /* LaunchScreen.storyboard */,
+				48FE48E81EF0218100388761 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +140,24 @@
 				482585BB1EED1EAF00E31424 /* DSBanAnController.swift */,
 			);
 			name = BanAnController;
+			sourceTree = "<group>";
+		};
+		48FE48EC1EF0231C00388761 /* LeftMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				48FE48ED1EF0233600388761 /* LeftMenuController.swift */,
+			);
+			name = LeftMenuController;
+			sourceTree = "<group>";
+		};
+		48FE48EF1EF02A4B00388761 /* BaoCaoController */ = {
+			isa = PBXGroup;
+			children = (
+				48FE48F01EF02A6800388761 /* BaoCaoController.swift */,
+				48FE48F21EF02A7700388761 /* BaoCaoDetailController.swift */,
+				48FE48F41EF02A9100388761 /* BaoCao_HoaDonCell.swift */,
+			);
+			name = BaoCaoController;
 			sourceTree = "<group>";
 		};
 		B3BC8A770595D5BA02C4A1B1 /* Pods */ = {
@@ -203,13 +231,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				023735621EC6D2B3002BD0B7 /* LaunchScreen.storyboard in Resources */,
+				48FE48EB1EF0218100388761 /* Main.storyboard in Resources */,
 				482585C21EED27A700E31424 /* Bulleted List-25.png in Resources */,
 				482585C41EED27A700E31424 /* Search-25.png in Resources */,
 				482585C31EED27A700E31424 /* Restart-25.png in Resources */,
+				48FE48EA1EF0218100388761 /* LaunchScreen.storyboard in Resources */,
 				0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */,
 				0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */,
-				0237355D1EC6D2B3002BD0B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,30 +299,32 @@
 				482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */,
 				482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */,
 				482585BE1EED222900E31424 /* Global.swift in Sources */,
+				48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */,
 				023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */,
 				482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */,
+				48FE48F51EF02A9100388761 /* BaoCao_HoaDonCell.swift in Sources */,
+				48FE48EE1EF0233600388761 /* LeftMenuController.swift in Sources */,
+				48FE48F11EF02A6800388761 /* BaoCaoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0237355B1EC6D2B3002BD0B7 /* Main.storyboard */ = {
+		48FE48E61EF0218100388761 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0237355C1EC6D2B3002BD0B7 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		023735601EC6D2B3002BD0B7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				023735611EC6D2B3002BD0B7 /* Base */,
+				48FE48E71EF0218100388761 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
+			sourceTree = "<group>";
+		};
+		48FE48E81EF0218100388761 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48FE48E91EF0218100388761 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

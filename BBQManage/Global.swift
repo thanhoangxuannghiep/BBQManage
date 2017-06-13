@@ -7,4 +7,6 @@
 //
 
 import Foundation
-// width left menu = 194
+var menu_bool = true
+var user_name = "Trần Thanh Tùng"
+var quanly = true

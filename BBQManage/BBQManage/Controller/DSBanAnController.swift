@@ -12,23 +12,11 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var DSBanan: UITableView!
     
-    //Số liệu dùng để hiển thị hay không hiển thi left menu
-    @IBOutlet weak var LeadingSpaceLeftMenu: NSLayoutConstraint!
-    var menushow = false // => flag để xét có hiển thị menu hay không
-    
     //data test thử => có thể xoá
     let pickerData = ["Lớp 1", "Lớp 2", "Lớp 3"]
     
-    //Left menu
-    @IBOutlet weak var btnQLKhuVuc: UIButton!
-    @IBOutlet weak var btnQLBanAn: UIButton!
-    @IBOutlet weak var btnQLNhanVien: UIButton!
-    @IBOutlet weak var btnQLMonAn: UIButton!
-    @IBOutlet weak var imgUser: UIImageView!
-    @IBOutlet weak var lblTenUser: UILabel!
-    @IBOutlet weak var btnDangXuat: UIButton!
-    
-    
+    //Biến hiển thị left menu
+    var left_menu : LeftMenuController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +25,8 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         self.DSBanan.delegate = self
         self.DSBanan.dataSource = self
         
-        //Vô hiệu hoá các nút quản lý nếu user không phải là chủ
-        btnQLBanAn.isEnabled = false
-        btnQLKhuVuc.isEnabled = false
-        btnQLNhanVien.isEnabled = false
-        btnQLMonAn.isEnabled = false
+        //Hiển thị left menu
+        left_menu = self.storyboard?.instantiateViewController(withIdentifier: "LeftMenuController") as! LeftMenuController
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,28 +46,34 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.TenBanAn.text = pickerData[indexPath.row]
         return cell
     }
+    //End table view
     
-    @IBAction func ClickMenu(_ sender: Any) {
-        if(menushow) //Menu đang mở thì tắt đi
+    // Left menu show
+    @IBAction func Click_ShowLeftMenu(_ sender: UIBarButtonItem) {
+        if menu_bool
         {
-            LeadingSpaceLeftMenu.constant = -194
+            show_menu()
         }
-        else // đang tắt thì mở
-        {
-            LeadingSpaceLeftMenu.constant = 0
+        else{
+            close_menu()
         }
-        menushow = !menushow
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func show_menu()
+    {
+        UIView.animate(withDuration: 0.5) { ()->Void in
+            self.addChildViewController(self.left_menu)
+            self.view.addSubview(self.left_menu.view)
+            menu_bool = false
+        }
+        
     }
-    */
+    
+    func close_menu()
+    {
+        self.left_menu.view.removeFromSuperview()
+        menu_bool = true
+    }
+    //End left menu
 
 }
