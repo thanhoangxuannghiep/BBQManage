@@ -10,6 +10,10 @@
 		023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023735571EC6D2B3002BD0B7 /* AppDelegate.swift */; };
 		0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */; };
 		0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */; };
+		480315161EF04CAB00009F2E /* KhuVucCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315151EF04CAB00009F2E /* KhuVucCell.swift */; };
+		480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315171EF04CDF00009F2E /* KhuVucAddController.swift */; };
+		480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD7181EF03C0300BBFE73 /* KhuVucController.swift */; };
+		480AD71B1EF0423800BBFE73 /* KhuVucDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */; };
 		482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585B91EED1E8B00E31424 /* BanAnCell.swift */; };
 		482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BB1EED1EAF00E31424 /* DSBanAnController.swift */; };
 		482585BE1EED222900E31424 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BD1EED222900E31424 /* Global.swift */; };
@@ -32,6 +36,10 @@
 		0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		023735631EC6D2B3002BD0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		480315151EF04CAB00009F2E /* KhuVucCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucCell.swift; sourceTree = "<group>"; };
+		480315171EF04CDF00009F2E /* KhuVucAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucAddController.swift; sourceTree = "<group>"; };
+		480AD7181EF03C0300BBFE73 /* KhuVucController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucController.swift; sourceTree = "<group>"; };
+		480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucDetailController.swift; sourceTree = "<group>"; };
 		482585B91EED1E8B00E31424 /* BanAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanAnCell.swift; sourceTree = "<group>"; };
 		482585BB1EED1EAF00E31424 /* DSBanAnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSBanAnController.swift; sourceTree = "<group>"; };
 		482585BD1EED222900E31424 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -102,9 +110,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		480AD7171EF03BE300BBFE73 /* KhuVucController */ = {
+			isa = PBXGroup;
+			children = (
+				480AD7181EF03C0300BBFE73 /* KhuVucController.swift */,
+				480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */,
+				480315151EF04CAB00009F2E /* KhuVucCell.swift */,
+				480315171EF04CDF00009F2E /* KhuVucAddController.swift */,
+			);
+			name = KhuVucController;
+			sourceTree = "<group>";
+		};
 		482585B51EED1BB100E31424 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				480AD7171EF03BE300BBFE73 /* KhuVucController */,
 				48FE48EF1EF02A4B00388761 /* BaoCaoController */,
 				48FE48EC1EF0231C00388761 /* LeftMenuController */,
 				482585B81EED1E2300E31424 /* BanAnController */,
@@ -301,10 +321,14 @@
 				482585BE1EED222900E31424 /* Global.swift in Sources */,
 				48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */,
 				023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */,
+				480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */,
+				480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */,
 				482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */,
 				48FE48F51EF02A9100388761 /* BaoCao_HoaDonCell.swift in Sources */,
 				48FE48EE1EF0233600388761 /* LeftMenuController.swift in Sources */,
+				480315161EF04CAB00009F2E /* KhuVucCell.swift in Sources */,
 				48FE48F11EF02A6800388761 /* BaoCaoController.swift in Sources */,
+				480AD71B1EF0423800BBFE73 /* KhuVucDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
