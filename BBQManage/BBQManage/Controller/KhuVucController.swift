@@ -16,12 +16,13 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
     let arr = ["Khu vực a", "Khu vực b", "Khu vực c"]
     var listdata = [[String: AnyObject]]()
     var listdata2 = [[String: AnyObject]]()
+    var  fetchKV = [KhuVuc]()
     let urlPath = "https://bbqmanage.000webhostapp.com/kv/all"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        ParseData(url: urlPath)
+        print(array.count)
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Danh sách khu vực"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
@@ -35,6 +36,38 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         //request2(url1: urlPath)
         
         
+    }
+    
+    func ParseData(url:String){
+        array = [KhuVuc]()
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            
+            if(error != nil){
+                print("error")
+            }else{
+                do{
+                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
+                    for item in fetchData{
+                        let eachKV = item as! [String : Any]
+                        let id = eachKV["maKV"] as! Int
+                        let tenKV = eachKV["TenKV"] as! String
+                        let motaKV = eachKV["MoTaKV"] as! String
+                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+                        
+                        self.tableKhuVuc.reloadData()
+                    }
+                }
+                catch{
+                    print("Error 2")
+                }
+            }
+        }
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,34 +85,34 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return listdata.count
         //return arr.count
-        return 4
+        return array.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "khuvuc_cell") as! KhuVucCell
-        //let item = listdata[indexPath.row]
-        //cell.lblTenKhuVuc.text = item["TenKV"] as! String
-        //cell.lblTenKhuVuc.text = arr[indexPath.row]
-        //return cell
-        let Urlrq = URL(string: urlPath)
-        let task = URLSession.shared.dataTask(with: Urlrq!, completionHandler: {
-            (data, response, error) in
-            if (error != nil){
-                print(error.debugDescription)
-                print(error?.localizedDescription)
-            } else {
-                do {
-                    self.listdata = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [[String: AnyObject]]
-                    let item = self.listdata[indexPath.row]
-                    cell.lblTenKhuVuc.text = item["TenKV"] as! String
-                    
-                } catch let error as NSError{
-                    print(error)
-                }
-            }
-            
-        })
-        task.resume()
+        let item = array[indexPath.row]
+        cell.lblTenKhuVuc.text = item.tenkv
+        //cell.lblTenKhuVuc.text = String(cstring: item.id)
         return cell
+//        let Urlrq = URL(string: urlPath)
+//        let task = URLSession.shared.dataTask(with: Urlrq!, completionHandler: {
+//            (data, response, error) in
+//            if (error != nil){
+//                print(error.debugDescription)
+//                print(error?.localizedDescription)
+//            } else {
+//                do {
+//                    self.listdata = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [[String: AnyObject]]
+//                    let item = self.listdata[indexPath.row]
+//                    cell.lblTenKhuVuc.text = item["TenKV"] as! String
+//                    
+//                } catch let error as NSError{
+//                    print(error)
+//                }
+//            }
+//            
+//        })
+//        task.resume()
+        //return cell
     }
     // Xử lý truyền dữ liệu khi click vào cell
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

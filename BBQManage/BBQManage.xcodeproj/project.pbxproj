@@ -10,6 +10,8 @@
 		023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023735571EC6D2B3002BD0B7 /* AppDelegate.swift */; };
 		0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */; };
 		0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */; };
+		027F3DB41EF0B8CA000BDD11 /* khuvuc_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */; };
+		027F3DB61EF0B8FF000BDD11 /* ParseDataFromAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F3DB51EF0B8FF000BDD11 /* ParseDataFromAPI.swift */; };
 		480315161EF04CAB00009F2E /* KhuVucCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315151EF04CAB00009F2E /* KhuVucCell.swift */; };
 		480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315171EF04CDF00009F2E /* KhuVucAddController.swift */; };
 		480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD7181EF03C0300BBFE73 /* KhuVucController.swift */; };
@@ -36,6 +38,8 @@
 		0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		023735631EC6D2B3002BD0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = khuvuc_model.swift; sourceTree = "<group>"; };
+		027F3DB51EF0B8FF000BDD11 /* ParseDataFromAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataFromAPI.swift; sourceTree = "<group>"; };
 		480315151EF04CAB00009F2E /* KhuVucCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucCell.swift; sourceTree = "<group>"; };
 		480315171EF04CDF00009F2E /* KhuVucAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucAddController.swift; sourceTree = "<group>"; };
 		480AD7181EF03C0300BBFE73 /* KhuVucController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		023735561EC6D2B3002BD0B7 /* BBQManage */ = {
 			isa = PBXGroup;
 			children = (
+				027F3DB11EF0B8B2000BDD11 /* helpers */,
+				027F3DB21EF0B8B2000BDD11 /* models */,
 				482585B51EED1BB100E31424 /* Controller */,
 				482585B61EED1BB100E31424 /* Resource */,
 				482585B71EED1BB100E31424 /* View */,
@@ -100,6 +106,22 @@
 				023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */,
 			);
 			path = BBQManage;
+			sourceTree = "<group>";
+		};
+		027F3DB11EF0B8B2000BDD11 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				027F3DB51EF0B8FF000BDD11 /* ParseDataFromAPI.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		027F3DB21EF0B8B2000BDD11 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		048FDB3D4E79FCE584B5A01F /* Frameworks */ = {
@@ -319,7 +341,9 @@
 				482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */,
 				482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */,
 				482585BE1EED222900E31424 /* Global.swift in Sources */,
+				027F3DB41EF0B8CA000BDD11 /* khuvuc_model.swift in Sources */,
 				48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */,
+				027F3DB61EF0B8FF000BDD11 /* ParseDataFromAPI.swift in Sources */,
 				023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */,
 				480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */,
 				480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */,
