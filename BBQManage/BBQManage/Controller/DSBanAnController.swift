@@ -58,15 +58,27 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
                 print("error")
             }else{
                 do{
-                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
-                    for item in fetchData{
-                        let eachBA = item as! [String : Any]
-                        let id = eachBA["maBA"] as! Int
-                        let soBA = eachBA["SoBanAn"] as! String
-                        let motaBA = eachBA["MoTaBA"] as! String
-                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA))
-                        self.DSBanan.reloadData()
+                    if let data = data {
+                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
+                        for item in myJson {
+                            let eachBA = item.value
+                            let id = eachBA["maBA"] as! Int
+                            let soBA = eachBA["SoBanAn"] as! String
+                            let motaBA = eachBA["MoTaBA"] as! String
+                            arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA))
+                            self.DSBanan.reloadData()
+
+                        }
                     }
+//                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
+//                    for item in fetchData{
+//                        let eachBA = item as! [String : Any]
+//                        let id = eachBA["maBA"] as! Int
+//                        let soBA = eachBA["SoBanAn"] as! String
+//                        let motaBA = eachBA["MoTaBA"] as! String
+//                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA))
+//                        self.DSBanan.reloadData()
+//                    }
                 }
                 catch{
                     print("Error 2")
