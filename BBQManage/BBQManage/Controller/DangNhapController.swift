@@ -12,10 +12,13 @@ class DangNhapController: UIViewController {
 
     @IBOutlet weak var input_username: UITextField!
     @IBOutlet weak var input_password: UITextField!
-    
+    var  fetchKV = [KhuVuc]()
+    let urlPath = "https://bbqmanage.000webhostapp.com/kv/all"
     override func viewDidLoad() {
+        //fetchKV = []
         super.viewDidLoad()
-
+        //ParseData(url: urlPath)
+        //print(array.count)
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = true;
        
