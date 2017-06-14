@@ -10,6 +10,8 @@ import UIKit
 
 class BaoCaoDetailController: UIViewController {
 
+    var daybegin : Date?
+    var dayend : Date?
     override func viewDidLoad() {
         super.viewDidLoad()
 

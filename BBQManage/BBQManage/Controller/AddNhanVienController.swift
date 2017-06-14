@@ -10,7 +10,7 @@ import UIKit
 
 class AddNhanVienController: UIViewController {
 
-    @IBOutlet weak var txtTenNhanVien: UITextField!
+    @IBOutlet weak var txtTenNhanVien: UITextField!    
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var imgHinhAnh: UIImageView!

@@ -11,7 +11,8 @@ import UIKit
 class NhanVienDetailController: UIViewController {
 
     @IBOutlet weak var txtTenNhanVien: UITextField!
-    @IBOutlet weak var txtEmailNhanVien: UITextField!
+    
+    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var imgHinhAnh: UIImageView!
     @IBOutlet weak var pickerKhuVuc: UIPickerView!

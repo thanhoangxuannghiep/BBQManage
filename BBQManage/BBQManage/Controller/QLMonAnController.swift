@@ -16,6 +16,8 @@ class QLMonAnController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Danh sách món"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +26,9 @@ class QLMonAnController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addTapped()
+    {
+        performSegue(withIdentifier: "addMonAn", sender: self)
     }
-    */
 
 }
