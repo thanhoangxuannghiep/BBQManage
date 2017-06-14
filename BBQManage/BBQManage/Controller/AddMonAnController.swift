@@ -15,6 +15,7 @@ class AddMonAnController: UIViewController {
     @IBOutlet weak var txtGiaTien: UITextField!
     @IBOutlet weak var imgHinhAnh: UIImageView!
     
+    @IBOutlet weak var slideshowScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

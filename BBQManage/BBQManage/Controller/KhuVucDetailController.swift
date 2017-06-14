@@ -10,6 +10,8 @@ import UIKit
 
 class KhuVucDetailController: UIViewController {
 
+    @IBOutlet weak var slideshowScrollView: UIScrollView!
+    
     var idKV : Int!
     //Dữ liệu kết nối với webservice
     

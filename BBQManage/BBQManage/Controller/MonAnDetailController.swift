@@ -15,6 +15,8 @@ class MonAnDetailController: UIViewController {
     @IBOutlet weak var txtGiaTien: UITextField!
     @IBOutlet weak var imgHinhAnh: UIImageView!
     
+    @IBOutlet weak var slideshowScrollView: UIScrollView!
+    
     var idMA : Int!
     
     override func viewDidLoad() {

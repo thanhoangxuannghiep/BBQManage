@@ -15,6 +15,7 @@ class ThemBanAnController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var imgBanAn: UIImageView!
     @IBOutlet weak var pickerKhuVuc: UIPickerView!
     
+    @IBOutlet weak var slideshowScrollView: UIScrollView!
     
     
     
