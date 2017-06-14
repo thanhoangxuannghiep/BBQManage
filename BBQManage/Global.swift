@@ -10,5 +10,6 @@ import Foundation
 var menu_bool = true
 var user_name = "Trần Thanh Tùng"
 var quanly = true
+//array khu vực của bbq
 var array = [KhuVuc]()
 //var listdata = [[String: AnyObject]]()

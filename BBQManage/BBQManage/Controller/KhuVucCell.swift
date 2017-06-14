@@ -13,6 +13,8 @@ class KhuVucCell: UITableViewCell {
     @IBOutlet weak var imgKhuVuc: UIImageView!
     @IBOutlet weak var lblTenKhuVuc: UILabel!
     
+    var idKV : Int?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

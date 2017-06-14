@@ -16,6 +16,8 @@
 		480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315171EF04CDF00009F2E /* KhuVucAddController.swift */; };
 		480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD7181EF03C0300BBFE73 /* KhuVucController.swift */; };
 		480AD71B1EF0423800BBFE73 /* KhuVucDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */; };
+		480C85D81EF0FD1200C0F029 /* secondSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480C85D71EF0FD1200C0F029 /* secondSB.storyboard */; };
+		480C85DA1EF0FD9500C0F029 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85D91EF0FD9500C0F029 /* ViewControllerTest.swift */; };
 		482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585B91EED1E8B00E31424 /* BanAnCell.swift */; };
 		482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BB1EED1EAF00E31424 /* DSBanAnController.swift */; };
 		482585BE1EED222900E31424 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BD1EED222900E31424 /* Global.swift */; };
@@ -44,6 +46,8 @@
 		480315171EF04CDF00009F2E /* KhuVucAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucAddController.swift; sourceTree = "<group>"; };
 		480AD7181EF03C0300BBFE73 /* KhuVucController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucController.swift; sourceTree = "<group>"; };
 		480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucDetailController.swift; sourceTree = "<group>"; };
+		480C85D71EF0FD1200C0F029 /* secondSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = secondSB.storyboard; path = BBQManage/Controller/secondSB.storyboard; sourceTree = SOURCE_ROOT; };
+		480C85D91EF0FD9500C0F029 /* ViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
 		482585B91EED1E8B00E31424 /* BanAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanAnCell.swift; sourceTree = "<group>"; };
 		482585BB1EED1EAF00E31424 /* DSBanAnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSBanAnController.swift; sourceTree = "<group>"; };
 		482585BD1EED222900E31424 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				48FE48EC1EF0231C00388761 /* LeftMenuController */,
 				482585B81EED1E2300E31424 /* BanAnController */,
 				482585C51EED32BB00E31424 /* DangNhapController.swift */,
+				480C85D91EF0FD9500C0F029 /* ViewControllerTest.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			children = (
 				48FE48E61EF0218100388761 /* LaunchScreen.storyboard */,
 				48FE48E81EF0218100388761 /* Main.storyboard */,
+				480C85D71EF0FD1200C0F029 /* secondSB.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				48FE48EB1EF0218100388761 /* Main.storyboard in Resources */,
 				482585C21EED27A700E31424 /* Bulleted List-25.png in Resources */,
 				482585C41EED27A700E31424 /* Search-25.png in Resources */,
+				480C85D81EF0FD1200C0F029 /* secondSB.storyboard in Resources */,
 				482585C31EED27A700E31424 /* Restart-25.png in Resources */,
 				48FE48EA1EF0218100388761 /* LaunchScreen.storyboard in Resources */,
 				0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */,
@@ -340,6 +347,7 @@
 			files = (
 				482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */,
 				482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */,
+				480C85DA1EF0FD9500C0F029 /* ViewControllerTest.swift in Sources */,
 				482585BE1EED222900E31424 /* Global.swift in Sources */,
 				027F3DB41EF0B8CA000BDD11 /* khuvuc_model.swift in Sources */,
 				48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */,

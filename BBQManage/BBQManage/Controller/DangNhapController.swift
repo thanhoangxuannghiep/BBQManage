@@ -14,6 +14,7 @@ class DangNhapController: UIViewController {
     @IBOutlet weak var input_password: UITextField!
     var  fetchKV = [KhuVuc]()
     let urlPath = "https://bbqmanage.000webhostapp.com/kv/all"
+    
     override func viewDidLoad() {
         //fetchKV = []
         super.viewDidLoad()
@@ -43,6 +44,38 @@ class DangNhapController: UIViewController {
         }
     }
     
+    /*func ParseData(url:String){
+        array = [KhuVuc]()
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            
+            if(error != nil){
+                print("error")
+            }else{
+                do{
+                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
+                    for item in fetchData{
+                        let eachKV = item as! [String : Any]
+                        let id = eachKV["maKV"] as! Int
+                        let tenKV = eachKV["TenKV"] as! String
+                        let motaKV = eachKV["MoTaKV"] as! String
+                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+                        
+                        self.tableKhuVuc.reloadData()
+                    }
+                }
+                catch{
+                    print("Error 2")
+                }
+            }
+        }
+        task.resume()
+    }*/
+    
     //Hàm  hiển thị alert message
     func create_alert(title : String, message : String )
     {
@@ -53,4 +86,6 @@ class DangNhapController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
 }
