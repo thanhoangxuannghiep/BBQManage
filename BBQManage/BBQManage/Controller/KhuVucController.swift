@@ -46,16 +46,27 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 print("error")
             }else{
                 do{
-                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
-                    for item in fetchData{
-                        let eachKV = item as! [String : Any]
-                        let id = eachKV["maKV"] as! Int
-                        let tenKV = eachKV["TenKV"] as! String
-                        let motaKV = eachKV["MoTaKV"] as! String
-                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
-                        
-                        self.tableKhuVuc.reloadData()
+                    if let data = data {
+                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
+                        for item in myJson {
+                            let eachKV = item.value
+                            let id = eachKV["maKV"] as! Int
+                            let tenKV = eachKV["TenKV"] as! String
+                            let motaKV = eachKV["MoTaKV"] as! String
+                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+                            self.tableKhuVuc.reloadData()
+                        }
                     }
+//                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
+//                    for item in fetchData{
+//                        let eachKV = item as! [String : Any]
+//                        let id = eachKV["maKV"] as! Int
+//                        let tenKV = eachKV["TenKV"] as! String
+//                        let motaKV = eachKV["MoTaKV"] as! String
+//                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+//                        
+//                        self.tableKhuVuc.reloadData()
+//                    }
                 }
                 catch{
                     print("Error 2")
