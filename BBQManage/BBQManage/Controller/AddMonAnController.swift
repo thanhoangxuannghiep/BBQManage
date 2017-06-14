@@ -13,7 +13,7 @@ class AddMonAnController: UIViewController {
     @IBOutlet weak var txtTenMon: UITextField!
     @IBOutlet weak var txtMoTa: UITextView!
     @IBOutlet weak var txtGiaTien: UITextField!
-    @IBOutlet weak var imgHinhAnh: UIImageView!
+    
     
     @IBOutlet weak var slideshowScrollView: UIScrollView!
     
