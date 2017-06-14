@@ -15,7 +15,7 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     //Dữ liệu kết nối với webservice
     var  fetchKV = [KhuVuc]()
-    let urlPath = "https://bbqmanage.000webhostapp.com/kv/all"
+    let urlPath = "http://bbqmanage.000webhostapp.com/kv/all"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +47,9 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
             }else{
                 do{
                     if let data = data {
-                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
+                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [[String: AnyObject]]
                         for item in myJson {
-                            let eachKV = item.value
+                            let eachKV = item
                             let id = eachKV["maKV"] as! Int
                             let tenKV = eachKV["TenKV"] as! String
                             let motaKV = eachKV["MoTaKV"] as! String

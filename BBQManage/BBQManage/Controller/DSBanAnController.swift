@@ -19,7 +19,7 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
     var left_menu : LeftMenuController!
     
     //Dữ liệu kết nối webservice bàn ăn
-    let urlPath_QL = "https://bbqmanage.000webhostapp.com/ba/all" // url cho quản lý, hiển thị hết bàn ăn
+    let urlPath_QL = "http://bbqmanage.000webhostapp.com/ba/all" // url cho quản lý, hiển thị hết bàn ăn
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +59,9 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
             }else{
                 do{
                     if let data = data {
-                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
+                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [[String: AnyObject]]
                         for item in myJson {
-                            let eachBA = item.value
+                            let eachBA = item
                             let id = eachBA["maBA"] as! Int
                             let soBA = eachBA["SoBanAn"] as! String
                             let motaBA = eachBA["MoTaBA"] as! String
