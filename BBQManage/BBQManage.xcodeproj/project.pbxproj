@@ -237,10 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				482585B91EED1E8B00E31424 /* BanAnCell.swift */,
-				482585BB1EED1EAF00E31424 /* DSBanAnController.swift */,
 				480C85DB1EF10C5200C0F029 /* QLBanAnController.swift */,
 				480C85DD1EF10CCC00C0F029 /* QLBanAnCell.swift */,
 				480C85DF1EF113C800C0F029 /* ThemBanAnController.swift */,
+				482585BB1EED1EAF00E31424 /* DSBanAnController.swift */,
 			);
 			name = BanAnController;
 			sourceTree = "<group>";

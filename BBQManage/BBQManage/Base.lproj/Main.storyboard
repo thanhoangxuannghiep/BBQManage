@@ -1071,7 +1071,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLL-z5-Ut7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.60000000000002" y="155.17241379310346"/>
+            <point key="canvasLocation" x="1826" y="155"/>
         </scene>
         <!--Mon An Controller-->
         <scene sceneID="unS-aU-yVw">
@@ -1459,27 +1459,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-i3-gwH">
-                                <rect key="frame" x="16" y="407" width="343" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Wcw-QT-w3Q"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="407" width="343" height="72"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1fZ-i3-gwH" firstAttribute="leading" secondItem="Zgu-3e-NXm" secondAttribute="leading" id="1kn-L1-c3w"/>
+                            <constraint firstItem="1fZ-i3-gwH" firstAttribute="trailing" secondItem="hov-yR-CUD" secondAttribute="trailing" id="1mT-HS-IpC"/>
                             <constraint firstItem="BpE-TT-DGC" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="16" id="1zv-mM-orN"/>
                             <constraint firstAttribute="trailing" secondItem="hov-yR-CUD" secondAttribute="trailing" constant="16" id="82l-Os-dBZ"/>
                             <constraint firstItem="MRC-PI-q97" firstAttribute="top" secondItem="BpE-TT-DGC" secondAttribute="bottom" constant="19" id="8Ok-Ul-7GP"/>
-                            <constraint firstAttribute="trailing" secondItem="1fZ-i3-gwH" secondAttribute="trailing" constant="16" id="DA7-e4-uBp"/>
                             <constraint firstItem="MRC-PI-q97" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="16" id="Fpk-RV-azM"/>
                             <constraint firstItem="hov-yR-CUD" firstAttribute="top" secondItem="BpE-TT-DGC" secondAttribute="bottom" constant="14" id="LVh-i5-dYB"/>
                             <constraint firstItem="BpE-TT-DGC" firstAttribute="top" secondItem="t72-79-uX2" secondAttribute="bottom" constant="8" id="NeA-T0-ur9"/>
-                            <constraint firstItem="1fZ-i3-gwH" firstAttribute="top" secondItem="Zgu-3e-NXm" secondAttribute="bottom" constant="8" id="Or2-CD-MnE"/>
                             <constraint firstItem="Hhg-ND-9eN" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="16" id="Ped-sH-Ko0"/>
                             <constraint firstAttribute="trailing" secondItem="Hhg-ND-9eN" secondAttribute="trailing" constant="16" id="PlM-B0-nge"/>
+                            <constraint firstItem="wCb-UG-NOV" firstAttribute="top" secondItem="1fZ-i3-gwH" secondAttribute="bottom" constant="188" id="QDL-eW-3tD"/>
                             <constraint firstAttribute="trailing" secondItem="BpE-TT-DGC" secondAttribute="trailing" constant="16" id="WWe-Rh-Ud5"/>
                             <constraint firstItem="Zgu-3e-NXm" firstAttribute="top" secondItem="VRA-Yf-GiF" secondAttribute="bottom" constant="8" id="cDA-vo-Qch"/>
-                            <constraint firstItem="1fZ-i3-gwH" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="16" id="ceh-6q-Dq1"/>
                             <constraint firstItem="Zgu-3e-NXm" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="16" id="dab-oD-1eJ"/>
                             <constraint firstItem="VRA-Yf-GiF" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="105" id="jR0-Fa-d4e"/>
                             <constraint firstAttribute="trailing" secondItem="VRA-Yf-GiF" secondAttribute="trailing" constant="105" id="kQD-TB-1Cb"/>
@@ -1487,6 +1484,7 @@
                             <constraint firstItem="t72-79-uX2" firstAttribute="top" secondItem="Hhg-ND-9eN" secondAttribute="bottom" constant="19" id="n3p-1a-Blj"/>
                             <constraint firstItem="VRA-Yf-GiF" firstAttribute="top" secondItem="hov-yR-CUD" secondAttribute="bottom" constant="4" id="owA-Th-fgv"/>
                             <constraint firstItem="t72-79-uX2" firstAttribute="leading" secondItem="t4D-rr-Nqu" secondAttribute="leading" constant="16" id="pIc-Gq-51A"/>
+                            <constraint firstItem="1fZ-i3-gwH" firstAttribute="top" secondItem="Zgu-3e-NXm" secondAttribute="bottom" constant="8" symbolic="YES" id="vUw-9u-cAO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1498,7 +1496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKo-Jt-LAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="155.17241379310346"/>
+            <point key="canvasLocation" x="2669.5999999999999" y="155.17241379310346"/>
         </scene>
         <!--Dang Nhap Controller-->
         <scene sceneID="x1S-p7-XVP">
