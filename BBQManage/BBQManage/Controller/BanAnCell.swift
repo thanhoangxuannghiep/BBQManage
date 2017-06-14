@@ -15,6 +15,8 @@ class BanAnCell: UITableViewCell {
     @IBOutlet weak var TrangThai: UILabel!
     @IBOutlet weak var imgStatus: UIImageView!
     
+    var idBA : Int!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

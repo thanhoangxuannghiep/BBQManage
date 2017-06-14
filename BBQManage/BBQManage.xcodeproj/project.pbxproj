@@ -38,6 +38,7 @@
 		482585C31EED27A700E31424 /* Restart-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585C01EED27A700E31424 /* Restart-25.png */; };
 		482585C41EED27A700E31424 /* Search-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 482585C11EED27A700E31424 /* Search-25.png */; };
 		482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585C51EED32BB00E31424 /* DangNhapController.swift */; };
+		48E0460A1EF17F580038E139 /* banan_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E046091EF17F580038E139 /* banan_model.swift */; };
 		48FE48EA1EF0218100388761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FE48E61EF0218100388761 /* LaunchScreen.storyboard */; };
 		48FE48EB1EF0218100388761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FE48E81EF0218100388761 /* Main.storyboard */; };
 		48FE48EE1EF0233600388761 /* LeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48ED1EF0233600388761 /* LeftMenuController.swift */; };
@@ -81,6 +82,7 @@
 		482585C01EED27A700E31424 /* Restart-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart-25.png"; sourceTree = "<group>"; };
 		482585C11EED27A700E31424 /* Search-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-25.png"; sourceTree = "<group>"; };
 		482585C51EED32BB00E31424 /* DangNhapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangNhapController.swift; sourceTree = "<group>"; };
+		48E046091EF17F580038E139 /* banan_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = banan_model.swift; sourceTree = "<group>"; };
 		48FE48E71EF0218100388761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BBQManage/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		48FE48E91EF0218100388761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BBQManage/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		48FE48ED1EF0233600388761 /* LeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */,
+				48E046091EF17F580038E139 /* banan_model.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				480C85E51EF1182500C0F029 /* NhanVienCell.swift in Sources */,
 				48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */,
 				027F3DB61EF0B8FF000BDD11 /* ParseDataFromAPI.swift in Sources */,
+				48E0460A1EF17F580038E139 /* banan_model.swift in Sources */,
 				480C85E01EF113C800C0F029 /* ThemBanAnController.swift in Sources */,
 				480C85EC1EF1227800C0F029 /* QLMonAnController.swift in Sources */,
 				480C85F61EF122D300C0F029 /* DSMonAnCell.swift in Sources */,
