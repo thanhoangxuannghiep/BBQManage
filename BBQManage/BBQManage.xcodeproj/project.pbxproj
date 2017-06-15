@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023669A91EF2DAC500E4182D /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023669A81EF2DAC500E4182D /* UIExtension.swift */; };
 		023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023735571EC6D2B3002BD0B7 /* AppDelegate.swift */; };
 		0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */; };
 		0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */; };
 		027F3DB41EF0B8CA000BDD11 /* khuvuc_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */; };
-		027F3DB61EF0B8FF000BDD11 /* ParseDataFromAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F3DB51EF0B8FF000BDD11 /* ParseDataFromAPI.swift */; };
 		480315161EF04CAB00009F2E /* KhuVucCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315151EF04CAB00009F2E /* KhuVucCell.swift */; };
 		480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315171EF04CDF00009F2E /* KhuVucAddController.swift */; };
 		480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD7181EF03C0300BBFE73 /* KhuVucController.swift */; };
@@ -53,13 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		023669A81EF2DAC500E4182D /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		023735541EC6D2B3002BD0B7 /* BBQManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023735571EC6D2B3002BD0B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		023735631EC6D2B3002BD0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = khuvuc_model.swift; sourceTree = "<group>"; };
-		027F3DB51EF0B8FF000BDD11 /* ParseDataFromAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataFromAPI.swift; sourceTree = "<group>"; };
 		480315151EF04CAB00009F2E /* KhuVucCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucCell.swift; sourceTree = "<group>"; };
 		480315171EF04CDF00009F2E /* KhuVucAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucAddController.swift; sourceTree = "<group>"; };
 		480AD7181EF03C0300BBFE73 /* KhuVucController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucController.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		027F3DB11EF0B8B2000BDD11 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				027F3DB51EF0B8FF000BDD11 /* ParseDataFromAPI.swift */,
+				023669A81EF2DAC500E4182D /* UIExtension.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -418,6 +418,7 @@
 				482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */,
 				480C85E71EF11BB700C0F029 /* NhanVienDetailController.swift in Sources */,
 				480C85F41EF122C200C0F029 /* QLMonAnCell.swift in Sources */,
+				023669A91EF2DAC500E4182D /* UIExtension.swift in Sources */,
 				480C85DE1EF10CCC00C0F029 /* QLBanAnCell.swift in Sources */,
 				480C85F21EF122AC00C0F029 /* DSMonAnController.swift in Sources */,
 				480C85F01EF1229C00C0F029 /* AddMonAnController.swift in Sources */,
@@ -428,7 +429,6 @@
 				027F3DB41EF0B8CA000BDD11 /* khuvuc_model.swift in Sources */,
 				480C85E51EF1182500C0F029 /* NhanVienCell.swift in Sources */,
 				48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */,
-				027F3DB61EF0B8FF000BDD11 /* ParseDataFromAPI.swift in Sources */,
 				48E0460A1EF17F580038E139 /* banan_model.swift in Sources */,
 				480C85E01EF113C800C0F029 /* ThemBanAnController.swift in Sources */,
 				480C85EC1EF1227800C0F029 /* QLMonAnController.swift in Sources */,
