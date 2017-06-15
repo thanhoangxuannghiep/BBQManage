@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableKhuVuc: UITableView!
     
@@ -30,6 +30,9 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         //Hiển thị dữ liệu table
         tableKhuVuc.delegate = self
         tableKhuVuc.dataSource = self
+        
+        //THêm searchbar vào table
+        searchbar()
     }
     
     //Hàm get dữ liệu từ webservice
@@ -133,4 +136,31 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    // SEARCH BAR
+    //Thêm search bar vào table view
+    func searchbar()
+    {
+        let searchbar = UISearchBar(frame : CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchbar.delegate = self
+        searchbar.tintColor = UIColor.lightGray
+        self.tableKhuVuc.tableHeaderView = searchbar
+    }
+    // Bắt sự kiện thay đổi text trong search bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""
+        {
+            ParseData(url: urlPath)
+        }
+        else{
+            /*arrayBA = arrayBA.filter({ (banan) -> Bool in
+                return banan.soba.lowercased().contains(searchText.lowercased())
+            })*/
+            array = array.filter({ (khuvuc) -> Bool in
+                return khuvuc.tenkv.lowercased().contains(searchText.lowercased())
+            })
+        }
+        tableKhuVuc.reloadData()
+    }
+    // END SEARCH BAR
 }

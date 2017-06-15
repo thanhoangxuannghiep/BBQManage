@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var QLBanAnTable: UITableView!
     
@@ -25,7 +25,11 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         QLBanAnTable.delegate = self
         QLBanAnTable.dataSource = self
         
+        //Hiển thị danh sách bàn ăn từ webservice
         ParseData(url: urlPath_QL)
+        
+        //Thêm search bar vào table
+        searchbar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +90,8 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         task.resume()
     }
-
+    
+    //TABLE VIEW
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -102,5 +107,30 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         //cell.idBA = item.id
         return cell
     }
+    //END TABLE VIEW
+    
+    // SEARCH BAR
+    //Thêm search bar vào table view
+    func searchbar()
+    {
+        let searchbar = UISearchBar(frame : CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchbar.delegate = self
+        searchbar.tintColor = UIColor.lightGray
+        self.QLBanAnTable.tableHeaderView = searchbar
+    }
+    // Bắt sự kiện thay đổi text trong search bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""
+        {
+            ParseData(url: urlPath_QL)
+        }
+        else{
+            arrayBA = arrayBA.filter({ (banan) -> Bool in
+                return banan.soba.lowercased().contains(searchText.lowercased())
+            })
+        }
+        QLBanAnTable.reloadData()
+    }
+    // END SEARCH BAR
 
 }
