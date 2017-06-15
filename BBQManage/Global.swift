@@ -15,4 +15,6 @@ var quanly = true
 var array = [KhuVuc]()
 //array bàn ăn
 var arrayBA = [BanAn]()
+//array món ăn
+var arrayMA = [MonAn]()
 //var listdata = [[String: AnyObject]]()

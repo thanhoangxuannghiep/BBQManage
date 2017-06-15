@@ -14,6 +14,7 @@ class QLMonAnCell: UITableViewCell {
     @IBOutlet weak var txtTenMonAn: UILabel!
     @IBOutlet weak var txtGiaTien: UILabel!
     
+    var idMA : Int!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

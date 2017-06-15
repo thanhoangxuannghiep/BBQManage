@@ -1093,7 +1093,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="639"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="110" id="ZpL-VU-FPP" customClass="QLMonAnCell" customModule="BBQManage" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="qlmonan_cell" rowHeight="110" id="ZpL-VU-FPP" customClass="QLMonAnCell" customModule="BBQManage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZpL-VU-FPP" id="suq-P4-Gto">
@@ -1153,7 +1153,7 @@
                                             <outlet property="imgMonAn" destination="VN3-Xe-0jJ" id="xho-VE-4Qk"/>
                                             <outlet property="txtGiaTien" destination="BY1-Js-LZk" id="TSp-5c-zwn"/>
                                             <outlet property="txtTenMonAn" destination="KWV-Sd-s3P" id="vMj-Np-Lnj"/>
-                                            <segue destination="Xz1-Pc-brp" kind="show" id="gNC-L8-Iwf"/>
+                                            <segue destination="Xz1-Pc-brp" kind="show" identifier="monanDetail" id="gNC-L8-Iwf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
