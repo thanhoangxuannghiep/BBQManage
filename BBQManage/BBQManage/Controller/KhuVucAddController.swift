@@ -55,7 +55,9 @@ class KhuVucAddController: UIViewController {
 //                print(responseJSON)
 //            }
             let contenRun = String(data: data, encoding: String.Encoding.utf8)
-            print(contenRun)
+            if( contenRun == "Success") {
+                _ = self.navigationController?.popViewController(animated: true)
+            }
         }
         
         task.resume()
