@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var DSBanan: UITableView!
     
@@ -37,11 +37,37 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         
         //Hiển thị left menu
         left_menu = self.storyboard?.instantiateViewController(withIdentifier: "LeftMenuController") as! LeftMenuController
+        
+        //Hiển thị search bar vào table
+        searchbar()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // SEARCH BAR
+    //Thêm search bar vào table view
+    func searchbar()
+    {
+        let searchbar = UISearchBar(frame : CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchbar.delegate = self
+        searchbar.tintColor = UIColor.lightGray
+        self.DSBanan.tableHeaderView = searchbar
+    }
+    // Bắt sự kiện thay đổi text trong search bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""
+        {
+            ParseData(url: urlPath_QL)
+        }
+        else{
+            arrayBA = arrayBA.filter({ (banan) -> Bool in
+                return banan.soba.lowercased().contains(searchText.lowercased())
+            })
+        }
+        DSBanan.reloadData()
     }
     
     //Hàm lấy dữ liệu danh sách bàn ăn
@@ -106,18 +132,6 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
             }else{
                 do
                 {
-                    //                    if let data = data {
-                    //                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
-                    //
-                    //                        for item in myJson {
-                    //                            let eachKV = item.value
-                    //                            let id = eachKV["maKV"] as! Int
-                    //                            let tenKV = eachKV["TenKV"] as! String
-                    //                            let motaKV = eachKV["MoTaKV"] as! String
-                    //                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
-                    //                            self.tableKhuVuc.reloadData()
-                    //                        }
-                    //                    }
                     let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
                     for item in fetchData
                     {
