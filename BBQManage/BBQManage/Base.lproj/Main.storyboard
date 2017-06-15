@@ -550,6 +550,9 @@
                                     <constraint firstAttribute="width" constant="91" id="8aD-U0-cFf"/>
                                 </constraints>
                                 <state key="normal" title="Thêm hình"/>
+                                <connections>
+                                    <action selector="Click_ChonAnh:" destination="6oy-kt-OEU" eventType="touchUpInside" id="qiE-Q3-2i0"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJj-MU-eZ9">
                                 <rect key="frame" x="16" y="285" width="343" height="120"/>
@@ -579,6 +582,7 @@
                     </view>
                     <connections>
                         <outlet property="motaKV" destination="vRp-6h-sFB" id="BGd-r2-prF"/>
+                        <outlet property="slideshowScrollView" destination="HJj-MU-eZ9" id="sCu-Vr-RO3"/>
                         <outlet property="txtTenKV" destination="THg-uw-svd" id="EfD-6Q-7IM"/>
                     </connections>
                 </viewController>
@@ -1223,7 +1227,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="OBv-ZU-n4f" kind="show" id="Az0-hf-1PK"/>
+                                            <outlet property="imgNhanVien" destination="uhE-kM-rGv" id="HxU-pC-jcu"/>
+                                            <outlet property="txtTenNhanVien" destination="zEM-PC-nNM" id="89E-Hl-qOy"/>
+                                            <segue destination="OBv-ZU-n4f" kind="show" identifier="nhanvienDetail" id="Az0-hf-1PK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1238,6 +1244,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableNhanVien" destination="hfn-XH-wWi" id="t1b-dV-9y9"/>
                         <segue destination="YgT-LB-tQh" kind="show" identifier="addNhanVien" id="H0W-5s-RUL"/>
                     </connections>
                 </viewController>

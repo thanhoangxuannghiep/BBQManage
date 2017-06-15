@@ -10,6 +10,14 @@ import UIKit
 
 class NhanVienCell: UITableViewCell {
 
+    @IBOutlet weak var txtTenNhanVien: UILabel!
+    @IBOutlet weak var imgNhanVien: UIImageView!
+    
+    var idNV : Int!
+    var emailNV : String!
+    var passNV : String!
+    var kvNV : Int!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

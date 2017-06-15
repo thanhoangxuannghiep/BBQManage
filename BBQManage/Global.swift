@@ -17,4 +17,6 @@ var array = [KhuVuc]()
 var arrayBA = [BanAn]()
 //array món ăn
 var arrayMA = [MonAn]()
+//array nhân viên
+var arrayNV = [NhanVien]()
 //var listdata = [[String: AnyObject]]()

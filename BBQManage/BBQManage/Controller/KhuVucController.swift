@@ -103,10 +103,11 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.lblTenKhuVuc.text = item.tenkv
         //cell.lblTenKhuVuc.text = String(cstring: item.id)
         cell.idKV = item.id
+        cell.motaKV = item.motaKV
         return cell
     }
     
-    // Xử lý truyền dữ liệu khi click vào cell
+    // Xử lý truyền dữ liệu qua form KhuVucDetail khi click vào cell
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if ( segue.identifier == "khuvucDetail")
         {
@@ -117,6 +118,8 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
             //truyền qua view KhuVucDetail
             let controller = segue.destination as! KhuVucDetailController
             controller.idKV = id
+            controller.tenKV = cell.lblTenKhuVuc.text
+            controller.motaKV = cell.motaKV
         }
     }
     

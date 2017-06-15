@@ -31,6 +31,7 @@
 		480C85F21EF122AC00C0F029 /* DSMonAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85F11EF122AC00C0F029 /* DSMonAnController.swift */; };
 		480C85F41EF122C200C0F029 /* QLMonAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85F31EF122C200C0F029 /* QLMonAnCell.swift */; };
 		480C85F61EF122D300C0F029 /* DSMonAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85F51EF122D300C0F029 /* DSMonAnCell.swift */; };
+		481C8EFA1EF2806D00634454 /* nhanvien_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481C8EF91EF2806D00634454 /* nhanvien_model.swift */; };
 		482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585B91EED1E8B00E31424 /* BanAnCell.swift */; };
 		482585BC1EED1EAF00E31424 /* DSBanAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BB1EED1EAF00E31424 /* DSBanAnController.swift */; };
 		482585BE1EED222900E31424 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482585BD1EED222900E31424 /* Global.swift */; };
@@ -76,6 +77,7 @@
 		480C85F11EF122AC00C0F029 /* DSMonAnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSMonAnController.swift; sourceTree = "<group>"; };
 		480C85F31EF122C200C0F029 /* QLMonAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLMonAnCell.swift; sourceTree = "<group>"; };
 		480C85F51EF122D300C0F029 /* DSMonAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSMonAnCell.swift; sourceTree = "<group>"; };
+		481C8EF91EF2806D00634454 /* nhanvien_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nhanvien_model.swift; sourceTree = "<group>"; };
 		482585B91EED1E8B00E31424 /* BanAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanAnCell.swift; sourceTree = "<group>"; };
 		482585BB1EED1EAF00E31424 /* DSBanAnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSBanAnController.swift; sourceTree = "<group>"; };
 		482585BD1EED222900E31424 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				027F3DB31EF0B8CA000BDD11 /* khuvuc_model.swift */,
 				48E046091EF17F580038E139 /* banan_model.swift */,
 				482585C21EF2483C00B0862F /* monan_model.swift */,
+				481C8EF91EF2806D00634454 /* nhanvien_model.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */,
 				480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */,
 				480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */,
+				481C8EFA1EF2806D00634454 /* nhanvien_model.swift in Sources */,
 				482585C61EED32BB00E31424 /* DangNhapController.swift in Sources */,
 				482585C31EF2483C00B0862F /* monan_model.swift in Sources */,
 				48FE48F51EF02A9100388761 /* BaoCao_HoaDonCell.swift in Sources */,
