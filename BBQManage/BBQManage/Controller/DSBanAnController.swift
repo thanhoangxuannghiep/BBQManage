@@ -69,6 +69,7 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         }
         DSBanan.reloadData()
     }
+    // END SEARCH BAR
     
     //Hàm lấy dữ liệu danh sách bàn ăn
     /*func ParseData(url:String)

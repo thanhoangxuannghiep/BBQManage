@@ -39,7 +39,7 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
 
     func addTapped()
     {
-        let json:  [String: Any] = ["tenKV": (txtTenKV.text)!, "motaKV": (motaKV.text)!]
+        //let json:  [String: Any] = ["tenKV": (txtTenKV.text)!, "motaKV": (motaKV.text)!]
         
         //let jsonData = try? JSONSerialization.data(withJSONObject: json)
         

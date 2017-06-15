@@ -11,7 +11,7 @@ import UIKit
 class NhanVienController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //URL kết nối webservice lấy danh sách nhân viên
-    let urlPath_NV = "http://bbqmanage.000webhostapp.com/nv/all"
+    let urlPath_NV = "http://bbqmanage.000webhostapp.com/api/nv"
     
     @IBOutlet weak var tableNhanVien: UITableView!
     
@@ -26,6 +26,8 @@ class NhanVienController: UIViewController, UITableViewDelegate, UITableViewData
         tableNhanVien.dataSource = self
         
         ParseData(url: urlPath_NV)
+        
+        tableNhanVien.allowsMultipleSelectionDuringEditing = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,6 +99,7 @@ class NhanVienController: UIViewController, UITableViewDelegate, UITableViewData
         task.resume()
     }
     
+    // TABLE NHAN VIEN
     // Hàm cho table view  danh sách nhân viên
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -114,5 +117,44 @@ class NhanVienController: UIViewController, UITableViewDelegate, UITableViewData
         cell.kvNV = nv.kv
         return cell
     }
+    //Cho phép Edit
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    //xử lý sự kiện
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        //Lấy giá trị id của cell
+        //let index = self.tableNhanVien.indexPathForSelectedRow
+        let cell = self.tableNhanVien.cellForRow(at: indexPath) as! NhanVienCell
+        let urlnv = "http://bbqmanage.000webhostapp.com/api/nv/" + String(cell.idNV)
+        print(urlnv)
+        let url = URL(string: urlnv)!
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        let data = "_method=DELETE" //PUT
+        // insert json data to the request
+        
+        request.httpBody = data.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            if let res = response {
+                print(res)
+            }
+            
+            let contenRun = String(data: data, encoding: String.Encoding.utf8)
+//            if( contenRun == "Success") {
+//                _ = self.navigationController?.popViewController(animated: true)
+//            }
+            print(contenRun)
+        }
+        
+        task.resume()
+    }
+    //END TABLE NHAN VIEN
 
 }
