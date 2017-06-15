@@ -81,6 +81,7 @@ class ThemBanAnController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         task.resume()
     }*/
     
+    //Lấy dữ liệu khu vực về và đưa vào pickerview
     func ParseData(url:String){
         array = [KhuVuc]()
         var request = URLRequest(url: URL(string: url)!)

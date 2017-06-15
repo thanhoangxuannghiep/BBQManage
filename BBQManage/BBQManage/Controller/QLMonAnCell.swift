@@ -15,6 +15,8 @@ class QLMonAnCell: UITableViewCell {
     @IBOutlet weak var txtGiaTien: UILabel!
     
     var idMA : Int!
+    var motaMA : String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

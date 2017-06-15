@@ -17,7 +17,11 @@ class MonAnDetailController: UIViewController {
     
     @IBOutlet weak var slideshowScrollView: UIScrollView!
     
+    //Dữ liệu truyền từ danh sách món ăn qua
     var idMA : Int!
+    var tenMA : String!
+    var giaMA : Int!
+    var motaMA : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,9 @@ class MonAnDetailController: UIViewController {
         
         self.navigationItem.title = "Thông tin khu vực" + String(idMA)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveTapped))
+        txtTenMon.text = tenMA
+        txtMoTa.text = motaMA
+        txtGiaTien.text = String(giaMA)
     }
 
     override func didReceiveMemoryWarning() {

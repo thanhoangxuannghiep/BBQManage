@@ -15,6 +15,9 @@ class DSMonAnCell: UITableViewCell {
     @IBOutlet weak var txtGiaTien: UILabel!
     @IBOutlet weak var txtSoLuongInput: UITextField!
     
+    var idMA : Int!
+    //var motaMA : String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

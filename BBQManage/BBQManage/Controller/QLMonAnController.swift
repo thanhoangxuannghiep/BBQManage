@@ -33,6 +33,7 @@ class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    //Truyền dữ liệu qua form MonAnDetail
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if ( segue.identifier == "monanDetail")
         {
@@ -40,9 +41,13 @@ class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataS
             let index = self.tableMonAn.indexPathForSelectedRow
             let cell = self.tableMonAn.cellForRow(at: index!) as! QLMonAnCell
             let id = cell.idMA
+            //let ten = cell.txtTenMonAn.text
             //truyền qua view MonAnDetail
             let controller = segue.destination as! MonAnDetailController
             controller.idMA = id
+            controller.tenMA = cell.txtTenMonAn.text!
+            controller.motaMA = cell.motaMA
+            controller.giaMA = Int(cell.txtGiaTien.text!)
         }
     }
 
@@ -115,7 +120,7 @@ class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.idMA = ma.id
         cell.txtTenMonAn.text = ma.tenma
         cell.txtGiaTien.text = String(ma.giatien)
-       
+        cell.motaMA = ma.motama
         return cell
     }
 
