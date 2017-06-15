@@ -15,7 +15,7 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     //Dữ liệu kết nối với webservice
     var  fetchKV = [KhuVuc]()
-    let urlPath = "http://bbqmanage.000webhostapp.com/kv/all"
+    let urlPath = "http://bbqmanage.000webhostapp.com/api/kv"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,35 +41,39 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
         
         let task = session.dataTask(with: request) { (data, response, error) in
+            if let res = response {
+                print(res)
+            }
             
             if(error != nil){
                 print("error")
             }else{
                 do{
-                    if let data = data {
-                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [[String: AnyObject]]
-                        for item in myJson {
-                            let eachKV = item
-                            let id = eachKV["maKV"] as! Int
-                            let tenKV = eachKV["TenKV"] as! String
-                            let motaKV = eachKV["MoTaKV"] as! String
-                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
-                            self.tableKhuVuc.reloadData()
-                        }
-                    }
-//                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! NSArray
-//                    for item in fetchData{
-//                        let eachKV = item as! [String : Any]
-//                        let id = eachKV["maKV"] as! Int
-//                        let tenKV = eachKV["TenKV"] as! String
-//                        let motaKV = eachKV["MoTaKV"] as! String
-//                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+//                    if let data = data {
+//                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
 //                        
-//                        self.tableKhuVuc.reloadData()
+//                        for item in myJson {
+//                            let eachKV = item.value
+//                            let id = eachKV["maKV"] as! Int
+//                            let tenKV = eachKV["TenKV"] as! String
+//                            let motaKV = eachKV["MoTaKV"] as! String
+//                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+//                            self.tableKhuVuc.reloadData()
+//                        }
 //                    }
+                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
+                    for item in fetchData{
+                        let eachKV = item.value
+                        let id = eachKV["maKV"] as! Int
+                        let tenKV = eachKV["TenKV"] as! String
+                        let motaKV = eachKV["MoTaKV"] as! String
+                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+                        
+                        self.tableKhuVuc.reloadData()
+                    }
                 }
                 catch{
-                    print("Error 2")
+                    print(response)
                 }
             }
         }
