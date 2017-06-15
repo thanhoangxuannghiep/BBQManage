@@ -9,17 +9,17 @@
 import UIKit
 
 class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-
-    @IBOutlet weak var DSBanan: UITableView!
     
-    //data test thử => có thể xoá
-    let pickerData = ["Lớp 1", "Lớp 2", "Lớp 3"]
+    @IBOutlet weak var DSBanan: UITableView!
+    @IBOutlet weak var lblTenKhuVuc: UILabel!
     
     //Biến hiển thị left menu
     var left_menu : LeftMenuController!
     
     //Dữ liệu kết nối webservice bàn ăn
     let urlPath_QL = "http://bbqmanage.000webhostapp.com/ba/all" // url cho quản lý, hiển thị hết bàn ăn
+    //url dành cho nhân viên
+    var urlPath_NV = "http://bbqmanage.000webhostapp.com/api/bakv/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,15 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         {
             //Nếu là quản lý thì dùng url của quán lý
             ParseData(url: urlPath_QL)
+            lblTenKhuVuc.isHidden = true
+        }
+        else
+        {
+            //Truyền id khu vực nhân viên đó phụ trách vào url
+            urlPath_NV = urlPath_NV + String(idKV)
+            //Hiển thị bàn ở khu vực đó
+            ParseData(url: urlPath_NV)
+            lblTenKhuVuc.text = "Khu vực " + String(idKV)
         }
 
         // Do any additional setup after loading the view.

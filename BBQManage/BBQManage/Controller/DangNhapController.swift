@@ -115,6 +115,7 @@ class DangNhapController: UIViewController {
                                 quanly = false
                             }
                             id_login = tk["id"] as! Int
+                            idKV = tk["idKV"] as! Int
                             self.performSegue(withIdentifier: "openMain", sender: self)
                         }
                     }
