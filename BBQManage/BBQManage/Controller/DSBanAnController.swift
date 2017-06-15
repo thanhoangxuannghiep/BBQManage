@@ -45,7 +45,8 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     //Hàm lấy dữ liệu danh sách bàn ăn
-    func ParseData(url:String){
+    /*func ParseData(url:String)
+    {
         arrayBA = [BanAn]()
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
@@ -86,7 +87,57 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
             }
         }
         task.resume()
+    }*/
+    
+    func ParseData(url:String){
+        arrayBA = [BanAn]()
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let res = response {
+                print(res)
+            }
+            
+            if(error != nil){
+                print("error")
+            }else{
+                do
+                {
+                    //                    if let data = data {
+                    //                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
+                    //
+                    //                        for item in myJson {
+                    //                            let eachKV = item.value
+                    //                            let id = eachKV["maKV"] as! Int
+                    //                            let tenKV = eachKV["TenKV"] as! String
+                    //                            let motaKV = eachKV["MoTaKV"] as! String
+                    //                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+                    //                            self.tableKhuVuc.reloadData()
+                    //                        }
+                    //                    }
+                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
+                    for item in fetchData
+                    {
+                        let eachBA = item.value
+                        let id = eachBA["maBA"] as! Int
+                        let soBA = eachBA["SoBanAn"] as! String
+                        let motaBA = eachBA["MoTaBA"] as! String
+                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA))
+                    }
+                    self.DSBanan.reloadData()
+                    print(arrayBA.count)
+                }
+                catch{
+                    print(response)
+                }
+            }
+        }
+        task.resume()
     }
+
 
     
     // Cài đặt cho Tableview danh sách bàn ăn
