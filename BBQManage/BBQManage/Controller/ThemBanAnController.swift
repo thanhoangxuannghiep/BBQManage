@@ -99,18 +99,6 @@ class ThemBanAnController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             }else{
                 do
                 {
-                    //                    if let data = data {
-                    //                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
-                    //
-                    //                        for item in myJson {
-                    //                            let eachKV = item.value
-                    //                            let id = eachKV["maKV"] as! Int
-                    //                            let tenKV = eachKV["TenKV"] as! String
-                    //                            let motaKV = eachKV["MoTaKV"] as! String
-                    //                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
-                    //                            self.tableKhuVuc.reloadData()
-                    //                        }
-                    //                    }
                     let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
                     for item in fetchData
                     {
@@ -160,27 +148,6 @@ class ThemBanAnController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
     }
     // Lúc tạo ra scrollView height 120
-    func addImageTo(scrollView: UIScrollView, image: UIImage) {
-        let width = CGFloat(100)
-        let height = CGFloat(100)
-        let spacing = CGFloat(10)
-        
-        let size = scrollView.contentSize // Kích thước hiện tại
-        var count = CGFloat(0)
-        
-        if (size.width > 0) { // Đang  chứa bao nhiêu hình?
-            count = (size.width - spacing ) / (width + spacing)
-        }
-        
-        // Tạo mới một imageview
-        let img = UIImageView(frame: CGRect(x: spacing + (width + spacing) * count, y:10, width: width, height: height))
-        img.image = image
-        scrollView.addSubview(img) // Thêm ảnh mới vào scrollview
-        
-        // Cập nhật lại kích thước của content size để chứa hình mới
-        count += 1
-        scrollView.contentSize = CGSize(width: spacing + (width + spacing) * CGFloat(count), height: height)
-        
-    }
+    
 
 }
