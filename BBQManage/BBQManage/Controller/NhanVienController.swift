@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NhanVienController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NhanVienController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     //URL kết nối webservice lấy danh sách nhân viên
     let urlPath_NV = "http://bbqmanage.000webhostapp.com/api/nv"
@@ -25,9 +25,14 @@ class NhanVienController: UIViewController, UITableViewDelegate, UITableViewData
         tableNhanVien.delegate = self
         tableNhanVien.dataSource = self
         
+        //Hiển thị danh sách vào table view
         ParseData(url: urlPath_NV)
         
+        //Cho phép edit trong table view
         tableNhanVien.allowsMultipleSelectionDuringEditing = true
+        
+        //Hiển thị searchbar vào table view
+        searchbar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,5 +161,29 @@ class NhanVienController: UIViewController, UITableViewDelegate, UITableViewData
         task.resume()
     }
     //END TABLE NHAN VIEN
+    
+    //SEARCH BAR
+    func searchbar()
+    {
+        let searchbar = UISearchBar(frame : CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchbar.delegate = self
+        searchbar.tintColor = UIColor.lightGray
+        self.tableNhanVien.tableHeaderView = searchbar
+    }
+    // Bắt sự kiện thay đổi text trong search bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""
+        {
+            ParseData(url: urlPath_NV)
+        }
+        else{
+            
+            arrayNV = arrayNV.filter({ (nhanvien) -> Bool in
+                return nhanvien.ten.lowercased().contains(searchText.lowercased())
+            })
+        }
+        tableNhanVien.reloadData()
+    }
+    // END SEARCH BAR
 
 }
