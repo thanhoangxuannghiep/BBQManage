@@ -17,7 +17,7 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //khai bao bien chua du lieu hinh anh
     var base64String : String!
-    
+    var arrImageData = [String]()
     //DS hình ảnh dc chọn
     var selectedImagesQueue = [UIImage]()
     //Tạo đối tượng image picker
@@ -68,17 +68,37 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
             //data is array of json
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             if let result = responseJSON as? [String : AnyObject]{
-                //insert image kv
-                for selectedImage in self.selectedImagesQueue {
-                    let imgData = UIImageJPEGRepresentation(selectedImage, 1.0)
-                    self.base64String = imgData?.base64EncodedString(options: [])
-                    let post = "maKV=\((result["id"])!)&imageURL="+self.base64String
+                //for item in self.arrImageData {
+                    //print(self.arrImageData.count)
+                    
+                    let post = "maKV=\((result["id"])!)&imageURL=\((self.base64String))"
                     let urlPost = "https://bbqmanage.000webhostapp.com/api/kvi"
                     self.upImage(post: post, urlPost: urlPost)
-                }
+                //}
             }
         }
         
+        task.resume()
+    }
+    
+    func upImage(post: String?, urlPost: String? ) {
+        
+        
+        let url: URL = URL(string: urlPost!)!
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = post?.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if error != nil {
+                print(error)
+            }else {
+                let contentRun = String(data: data!, encoding: String.Encoding.utf8)
+                print(contentRun)
+            }
+        }
         task.resume()
     }
     
@@ -93,6 +113,10 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             selectedImagesQueue += [pickedImage] // Đưa vào hàng đợi để lưu
+            let imgData:NSData = UIImageJPEGRepresentation(pickedImage, 1.0)! as NSData
+            self.base64String = imgData.base64EncodedString(options: .lineLength64Characters)
+            //print(base64String)
+            self.arrImageData.append(self.base64String)
             addImageTo(scrollView: slideshowScrollView, image: pickedImage)
         }
     }
