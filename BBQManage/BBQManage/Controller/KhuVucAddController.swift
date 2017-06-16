@@ -15,6 +15,9 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var slideshowScrollView: UIScrollView!
     
+    //khai bao bien chua du lieu hinh anh
+    var base64String : String!
+    
     //DS hình ảnh dc chọn
     var selectedImagesQueue = [UIImage]()
     //Tạo đối tượng image picker
@@ -49,21 +52,30 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
         // insert json data to the request
         request.httpBody = jsonData
         //send request and get result from api
-        let task = URLSession.shared.dataTask(with: request as URLRequest ) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request as URLRequest ) { (data, response, error) in
+            if let resp = response{
+                print(resp)
+                //view response of api
+            }
+            
             guard let data = data, error == nil else {
                 //if insert error, print this error
                 print(error?.localizedDescription ?? "No data")
                 return
             }
             
-            if let resp = response{
-                print(resp)
-            }
             
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: AnyObject] {
-                let result = responseJSON
-                print(result["0"])
+            //data is array of json
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            if let result = responseJSON as? [String : AnyObject]{
+                //insert image kv
+                for selectedImage in self.selectedImagesQueue {
+                    let imgData = UIImageJPEGRepresentation(selectedImage, 1.0)
+                    self.base64String = imgData?.base64EncodedString(options: [])
+                    let post = "maKV=\((result["id"])!)&imageURL="+self.base64String
+                    let urlPost = "https://bbqmanage.000webhostapp.com/api/kvi"
+                    self.upImage(post: post, urlPost: urlPost)
+                }
             }
         }
         
