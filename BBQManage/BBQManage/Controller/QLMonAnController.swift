@@ -8,12 +8,12 @@
 
 import UIKit
 
-class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableMonAn: UITableView!
     
     //URL kết nối webservice món ăn
-    let urlPath_MA = "http://bbqmanage.000webhostapp.com/ma/all"
+    let urlPath_MA = "http://bbqmanage.000webhostapp.com/api/ma"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,13 @@ class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableMonAn.delegate = self
         tableMonAn.dataSource = self
         
+        //Hiển thị danh sách món ăn
         ParseData(url: urlPath_MA)
+        
+        //Cho phép edit trong table món ăn
+        tableMonAn.allowsMultipleSelectionDuringEditing = true
+        //Thêm searchbar vào table món ăn
+        searchbar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,6 +113,7 @@ class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         task.resume()
     }
     
+    // TABLE VIEW
     // Hàm cho table view  quản lý danh sách món ăn
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -123,5 +130,67 @@ class QLMonAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.motaMA = ma.motama
         return cell
     }
+    // Cho phép edit
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    // Xử lí khi ấn nút delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //Lấy giá trị id của cell
+        let cell = self.tableMonAn.cellForRow(at: indexPath) as! QLMonAnCell
+        //Thêm giá trị vào url
+        var urlma = "http://bbqmanage.000webhostapp.com/api/ma/" + String(cell.idMA)
+        //print(urlma)
+        let url = URL(string: urlma)!
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        let data = "_method=DELETE" //PUT
+        // insert json data to the request
+        
+        request.httpBody = data.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            if let res = response {
+                print(res)
+            }
+            
+            let contenRun = String(data: data, encoding: String.Encoding.utf8)
+            //            if( contenRun == "Success") {
+            //                _ = self.navigationController?.popViewController(animated: true)
+            //            }
+            print(contenRun)
+        }
+        
+        task.resume()
+    }
+    // END TABLE VIEW
+    
+    //SEARCH BAR
+    func searchbar()
+    {
+        let searchbar = UISearchBar(frame : CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchbar.delegate = self
+        searchbar.tintColor = UIColor.lightGray
+        self.tableMonAn.tableHeaderView = searchbar
+    }
+    // Bắt sự kiện thay đổi text trong search bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""
+        {
+            ParseData(url: urlPath_MA)
+        }
+        else{
+            
+            arrayMA = arrayMA.filter({ (monan) -> Bool in
+                return monan.tenma.lowercased().contains(searchText.lowercased())
+            })
+        }
+        tableMonAn.reloadData()
+    }
+    // END SEARCH BAR
 
 }

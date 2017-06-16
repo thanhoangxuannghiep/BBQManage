@@ -13,9 +13,13 @@ public class BanAn {
     var id: Int?
     var soba : String
     var motaba: String
-    init (id : Int, soBA: String, motaBA: String){
+    var idKV : Int?
+    var status : Int?
+    init (id : Int, soBA: String, motaBA: String, KV: Int, Status: Int){
         self.id  = id
         self.soba = soBA
         self.motaba = motaBA
+        self.idKV = KV
+        self.status = Status
     }
 }

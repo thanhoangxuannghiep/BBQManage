@@ -17,7 +17,7 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
     var left_menu : LeftMenuController!
     
     //Dữ liệu kết nối webservice bàn ăn
-    let urlPath_QL = "http://bbqmanage.000webhostapp.com/ba/all" // url cho quản lý, hiển thị hết bàn ăn
+    let urlPath_QL = "http://bbqmanage.000webhostapp.com/api/ba" // url cho quản lý, hiển thị hết bàn ăn
     //url dành cho nhân viên
     var urlPath_NV = "http://bbqmanage.000webhostapp.com/api/bakv/"
     
@@ -149,7 +149,9 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
                         let id = eachBA["maBA"] as! Int
                         let soBA = eachBA["SoBanAn"] as! String
                         let motaBA = eachBA["MoTaBA"] as! String
-                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA))
+                        let KV = eachBA["idKV"] as! Int
+                        let stt = eachBA["Status"] as! Int
+                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA, KV: KV, Status: stt))
                     }
                     self.DSBanan.reloadData()
                     print(arrayBA.count)

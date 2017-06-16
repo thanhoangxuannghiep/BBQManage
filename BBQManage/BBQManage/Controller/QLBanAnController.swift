@@ -13,7 +13,7 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var QLBanAnTable: UITableView!
     
     //url kết nối tới webservice
-    let urlPath_QL = "http://bbqmanage.000webhostapp.com/ba/all"
+    let urlPath_QL = "http://bbqmanage.000webhostapp.com/api/ba"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,11 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         //Hiển thị danh sách bàn ăn từ webservice
         ParseData(url: urlPath_QL)
         
+        //Lấy danh sách khu vực
+        DsKhuVuc()
+        print(array)
+        //Cho phép edit trong table view
+        QLBanAnTable.allowsMultipleSelectionDuringEditing = true
         //Thêm search bar vào table
         searchbar()
     }
@@ -42,6 +47,7 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         performSegue(withIdentifier: "addBanAn", sender: self)
     }
     
+    // Lấy danh sách bàn ăn
     func ParseData(url:String){
         arrayBA = [BanAn]()
         var request = URLRequest(url: URL(string: url)!)
@@ -78,10 +84,52 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
                         let id = eachBA["maBA"] as! Int
                         let soBA = eachBA["SoBanAn"] as! String
                         let motaBA = eachBA["MoTaBA"] as! String
-                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA))
+                        let KV = eachBA["idKV"] as! Int
+                        let stt = eachBA["Status"] as! Int
+                        arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA, KV: KV, Status: stt))
                         
                     }
                     self.QLBanAnTable.reloadData()
+                }
+                catch{
+                    print(response)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    //Lấy danh sách khu vực
+    func DsKhuVuc()
+    {
+        array = [KhuVuc]()
+        var request = URLRequest(url: URL(string: "http://bbqmanage.000webhostapp.com/api/kv")!)
+        request.httpMethod = "GET"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let res = response {
+                print(res)
+            }
+            
+            if(error != nil){
+                print("error")
+            }
+            else
+            {
+                do
+                {
+                    let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
+                    for item in fetchData
+                    {
+                        let eachKV = item.value
+                        let id = eachKV["maKV"] as! Int
+                        let tenKV = eachKV["TenKV"] as! String
+                        let motaKV = eachKV["MoTaKV"] as! String
+                        array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
+                        
+                    }
                 }
                 catch{
                     print(response)
@@ -103,9 +151,51 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
         let ba = arrayBA[indexPath.row]
         cell.txtTenBan.text = ba.soba
         cell.idBan = ba.id
-        //cell.TenBanAn.text = item.soba
-        //cell.idBA = item.id
+        cell.idKV = ba.idKV
+        for kv in array
+        {
+            if( kv.id == cell.idKV )
+            {
+                cell.txtKhuVuc.text = kv.tenkv
+            }
+        }
         return cell
+    }
+    //Cho phép edit
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // Lấy giá trị id từ cell được chọn
+        let cell = self.QLBanAnTable.cellForRow(at: indexPath) as! QLBanAnCell
+        // Tạo url để xoá
+        let urlba = "http://bbqmanage.000webhostapp.com/api/ba/" + String(cell.idBan)
+        let url = URL(string: urlba)!
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        let data = "_method=DELETE" //PUT
+        // insert json data to the request
+        
+        request.httpBody = data.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            if let res = response {
+                print(res)
+            }
+            
+            let contenRun = String(data: data, encoding: String.Encoding.utf8)
+            //            if( contenRun == "{\"msg\":\"Success\"}") {
+            //                _ = self.navigationController?.popViewController(animated: true)
+            //            }
+            print(contenRun)
+        }
+        
+        task.resume()
+        
     }
     //END TABLE VIEW
     

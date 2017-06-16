@@ -17,6 +17,8 @@ class QLBanAnCell: UITableViewCell {
     
     //Biến lưu id của bàn ( nếu có dùng )
     var idBan : Int!
+    var idKV : Int!
+    var motaBA : String!
 
     override func awakeFromNib() {
         super.awakeFromNib()
