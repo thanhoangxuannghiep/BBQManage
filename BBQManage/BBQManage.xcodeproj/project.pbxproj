@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023669A91EF2DAC500E4182D /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023669A81EF2DAC500E4182D /* UIExtension.swift */; };
 		023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023735571EC6D2B3002BD0B7 /* AppDelegate.swift */; };
 		0237355F1EC6D2B3002BD0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */; };
 		0237356A1EC6D2D1002BD0B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023735691EC6D2D1002BD0B7 /* GoogleService-Info.plist */; };
@@ -16,7 +15,6 @@
 		480315181EF04CDF00009F2E /* KhuVucAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480315171EF04CDF00009F2E /* KhuVucAddController.swift */; };
 		480AD7191EF03C0300BBFE73 /* KhuVucController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD7181EF03C0300BBFE73 /* KhuVucController.swift */; };
 		480AD71B1EF0423800BBFE73 /* KhuVucDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */; };
-		480C85D81EF0FD1200C0F029 /* secondSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480C85D71EF0FD1200C0F029 /* secondSB.storyboard */; };
 		480C85DA1EF0FD9500C0F029 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85D91EF0FD9500C0F029 /* ViewControllerTest.swift */; };
 		480C85DC1EF10C5200C0F029 /* QLBanAnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85DB1EF10C5200C0F029 /* QLBanAnController.swift */; };
 		480C85DE1EF10CCC00C0F029 /* QLBanAnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C85DD1EF10CCC00C0F029 /* QLBanAnCell.swift */; };
@@ -52,10 +50,10 @@
 		48FE48F31EF02A7700388761 /* BaoCaoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48F21EF02A7700388761 /* BaoCaoDetailController.swift */; };
 		48FE48F51EF02A9100388761 /* BaoCao_HoaDonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE48F41EF02A9100388761 /* BaoCao_HoaDonCell.swift */; };
 		AB115E5C44005C56693E466C /* Pods_BBQManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */; };
+		EEF104AD1EF3CAA900998730 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF104AC1EF3CAA900998730 /* UIExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		023669A81EF2DAC500E4182D /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		023735541EC6D2B3002BD0B7 /* BBQManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023735571EC6D2B3002BD0B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0237355E1EC6D2B3002BD0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 		480315171EF04CDF00009F2E /* KhuVucAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucAddController.swift; sourceTree = "<group>"; };
 		480AD7181EF03C0300BBFE73 /* KhuVucController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucController.swift; sourceTree = "<group>"; };
 		480AD71A1EF0423800BBFE73 /* KhuVucDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KhuVucDetailController.swift; sourceTree = "<group>"; };
-		480C85D71EF0FD1200C0F029 /* secondSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = secondSB.storyboard; path = BBQManage/Controller/secondSB.storyboard; sourceTree = SOURCE_ROOT; };
 		480C85D91EF0FD9500C0F029 /* ViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
 		480C85DB1EF10C5200C0F029 /* QLBanAnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLBanAnController.swift; sourceTree = "<group>"; };
 		480C85DD1EF10CCC00C0F029 /* QLBanAnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLBanAnCell.swift; sourceTree = "<group>"; };
@@ -103,6 +100,7 @@
 		48FE48F41EF02A9100388761 /* BaoCao_HoaDonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaoCao_HoaDonCell.swift; sourceTree = "<group>"; };
 		927EE59A84F4EB0074117DE5 /* Pods-BBQManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage.debug.xcconfig"; sourceTree = "<group>"; };
 		AD085B7E0CE0E8D4538925F0 /* Pods-BBQManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQManage.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBQManage/Pods-BBQManage.release.xcconfig"; sourceTree = "<group>"; };
+		EEF104AC1EF3CAA900998730 /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		F8833EFF6738301AFBC49E01 /* Pods_BBQManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBQManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,7 +153,7 @@
 		027F3DB11EF0B8B2000BDD11 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				023669A81EF2DAC500E4182D /* UIExtension.swift */,
+				EEF104AC1EF3CAA900998730 /* UIExtension.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -247,7 +245,6 @@
 			children = (
 				48FE48E61EF0218100388761 /* LaunchScreen.storyboard */,
 				48FE48E81EF0218100388761 /* Main.storyboard */,
-				480C85D71EF0FD1200C0F029 /* secondSB.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,7 +356,6 @@
 				482585C21EED27A700E31424 /* Bulleted List-25.png in Resources */,
 				4810F6461EF395B900AB17D8 /* using.png in Resources */,
 				482585C41EED27A700E31424 /* Search-25.png in Resources */,
-				480C85D81EF0FD1200C0F029 /* secondSB.storyboard in Resources */,
 				4810F6451EF395B900AB17D8 /* available.png in Resources */,
 				482585C31EED27A700E31424 /* Restart-25.png in Resources */,
 				48FE48EA1EF0218100388761 /* LaunchScreen.storyboard in Resources */,
@@ -426,7 +422,6 @@
 				482585BA1EED1E8B00E31424 /* BanAnCell.swift in Sources */,
 				480C85E71EF11BB700C0F029 /* NhanVienDetailController.swift in Sources */,
 				480C85F41EF122C200C0F029 /* QLMonAnCell.swift in Sources */,
-				023669A91EF2DAC500E4182D /* UIExtension.swift in Sources */,
 				480C85DE1EF10CCC00C0F029 /* QLBanAnCell.swift in Sources */,
 				480C85F21EF122AC00C0F029 /* DSMonAnController.swift in Sources */,
 				480C85F01EF1229C00C0F029 /* AddMonAnController.swift in Sources */,
@@ -441,6 +436,7 @@
 				480C85E01EF113C800C0F029 /* ThemBanAnController.swift in Sources */,
 				480C85EC1EF1227800C0F029 /* QLMonAnController.swift in Sources */,
 				481AFEFE1EF2B0BA00BC82BB /* BanAnDetailController.swift in Sources */,
+				EEF104AD1EF3CAA900998730 /* UIExtension.swift in Sources */,
 				480C85F61EF122D300C0F029 /* DSMonAnCell.swift in Sources */,
 				480C85E91EF11EEC00C0F029 /* AddNhanVienController.swift in Sources */,
 				023735581EC6D2B3002BD0B7 /* AppDelegate.swift in Sources */,

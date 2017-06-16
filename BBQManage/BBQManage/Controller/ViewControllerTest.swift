@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewControllerTest: UIViewController {
 
@@ -14,7 +15,7 @@ class ViewControllerTest: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // Alamofire.request(<#T##url: URLConvertible##URLConvertible#>)
         // Do any additional setup after loading the view.
         textTest.text = "Thử nghiệm"
     }

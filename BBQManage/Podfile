@@ -8,4 +8,5 @@ target 'BBQManage' do
   # Pods for BBQManage
 	pod ‘Firebase/Core’
 	pod ‘Firebase/Database’
+    pod 'Alamofire'
 end

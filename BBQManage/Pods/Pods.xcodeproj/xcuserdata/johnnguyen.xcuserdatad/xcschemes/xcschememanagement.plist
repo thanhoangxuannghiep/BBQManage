@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-BBQManage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -22,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D0E1DC94E443385DB457B6A44139775</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A483713AFCA6BC4E32D3E726C61F0572</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -52,18 +52,6 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 print("error")
             }else{
                 do{
-//                    if let data = data {
-//                        let myJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers ) as! [String: AnyObject]
-//                        
-//                        for item in myJson {
-//                            let eachKV = item.value
-//                            let id = eachKV["maKV"] as! Int
-//                            let tenKV = eachKV["TenKV"] as! String
-//                            let motaKV = eachKV["MoTaKV"] as! String
-//                            array.append(KhuVuc(id: id, tenkv: tenKV, motaKV: motaKV))
-//                            self.tableKhuVuc.reloadData()
-//                        }
-//                    }
                     let fetchData = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
                     for item in fetchData{
                         let eachKV = item.value
@@ -83,11 +71,6 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         task.resume()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //Thực hiện thêm khu vực khi ấn vào nút thêm
     func addTapped()
     {
@@ -106,6 +89,10 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.lblTenKhuVuc.text = item.tenkv
         //cell.lblTenKhuVuc.text = String(cstring: item.id)
         cell.idKV = item.id
+        
+        //get image kv
+        
+        
         cell.motaKV = item.motaKV
         return cell
     }
@@ -135,6 +122,13 @@ class KhuVucController: UIViewController, UITableViewDelegate, UITableViewDataSo
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ParseData(url: urlPath)
+        //self.manageKVTable.reloadData() // Cập nhật giao diện
     }
     
     // SEARCH BAR

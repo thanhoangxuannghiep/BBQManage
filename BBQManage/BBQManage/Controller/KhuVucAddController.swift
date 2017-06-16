@@ -16,7 +16,7 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var slideshowScrollView: UIScrollView!
     
     //khai bao bien chua du lieu hinh anh
-    var base64String : String!
+    //var base64String : String!
     var arrImageData = [String]()
     //DS hình ảnh dc chọn
     var selectedImagesQueue = [UIImage]()
@@ -68,35 +68,61 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
             //data is array of json
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             if let result = responseJSON as? [String : AnyObject]{
-                //for item in self.arrImageData {
-                    //print(self.arrImageData.count)
-                    
-                    let post = "maKV=\((result["id"])!)&imageURL=\((self.base64String))"
+                //for item in self.selectedImagesQueue {
+                    var str : String?
+                    let imgData:NSData = UIImageJPEGRepresentation(self.selectedImagesQueue[0], 0.5)! as NSData
+
+                    let base64String = try? imgData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters) as String
                     let urlPost = "https://bbqmanage.000webhostapp.com/api/kvi"
-                    self.upImage(post: post, urlPost: urlPost)
-                //}
+                    self.upImage(id: result["id"], imageData: base64String, urlPost: urlPost)
+                 //}
             }
         }
         
         task.resume()
     }
     
-    func upImage(post: String?, urlPost: String? ) {
+    func upImage(id: AnyObject?, imageData: String?, urlPost: String? ) {
         
         
-        let url: URL = URL(string: urlPost!)!
+        //create directory
+        let json: [String: Any] = ["maKV": "\((id)!)", "imageURL": "\((imageData)!)"]
+        //parsing dict to json
+        let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+        
+        // create post request
+        let url = URL(string: urlPost!)!
         let request = NSMutableURLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = post?.data(using: String.Encoding.utf8)
-        let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
-            if let response = response {
-                print(response)
+        //set content-type to json
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST" //method for add event
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        //send request and get result from api
+        let task = URLSession.shared.dataTask(with: request as URLRequest ) { (data, response, error) in
+            if let resp = response{
+                print(resp)
+                //view response of api
             }
-            if error != nil {
-                print(error)
-            }else {
-                let contentRun = String(data: data!, encoding: String.Encoding.utf8)
-                print(contentRun)
+            
+            guard let data = data, error == nil else {
+                //if insert error, print this error
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            
+            //data is array of json
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            if let result = responseJSON as? [String : AnyObject]{
+                //print(result["status"])
+                if (result["status"])! as! String == "success" {
+                    self.alert(title: "Success", message: "Area has been added!") { _ in
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }
+                }
             }
         }
         task.resume()
@@ -113,10 +139,8 @@ class KhuVucAddController: UIViewController, UIImagePickerControllerDelegate, UI
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             selectedImagesQueue += [pickedImage] // Đưa vào hàng đợi để lưu
-            let imgData:NSData = UIImageJPEGRepresentation(pickedImage, 1.0)! as NSData
-            self.base64String = imgData.base64EncodedString(options: .lineLength64Characters)
-            //print(base64String)
-            self.arrImageData.append(self.base64String)
+            
+            //self.arrImageData.append(self.base64String)
             addImageTo(scrollView: slideshowScrollView, image: pickedImage)
         }
     }
