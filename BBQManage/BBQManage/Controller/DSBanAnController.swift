@@ -8,11 +8,12 @@
 
 import UIKit
 
-class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITabBarDelegate {
     
     @IBOutlet weak var DSBanan: UITableView!
     @IBOutlet weak var lblTenKhuVuc: UILabel!
     
+    @IBOutlet weak var tabbarFilter: UITabBar!
     //Biến hiển thị left menu
     var left_menu : LeftMenuController!
     
@@ -21,6 +22,7 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
     //url dành cho nhân viên
     var urlPath_NV = "http://bbqmanage.000webhostapp.com/api/bakv/"
     
+    var arraybackup = arrayBA
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +51,9 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         
         //Hiển thị search bar vào table
         searchbar()
+        tabbarFilter.delegate = self
+        tabbarFilter.selectedItem = itemTatCa
+        DSBanan.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,14 +67,48 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
     {
         let searchbar = UISearchBar(frame : CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
         searchbar.delegate = self
+        //Cho phép tìm kiếm theo
         searchbar.tintColor = UIColor.lightGray
         self.DSBanan.tableHeaderView = searchbar
     }
     // Bắt sự kiện thay đổi text trong search bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var url : String!
+        if(quanly)
+        {
+            url = urlPath_QL
+        }
+        else
+        {
+            url = urlPath_NV
+        }
         if searchText == ""
         {
-            ParseData(url: urlPath_QL)
+            arrayBA = arraybackup
+            if(tabbarFilter.selectedItem == itemDaDat)
+            {
+                arrayBA = arrayBA.filter({ (banan) -> Bool in
+                    if(banan.status == 1)
+                    {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                })
+            }
+            if(tabbarFilter.selectedItem == itemTrong)
+            {
+                arrayBA = arrayBA.filter({ (banan) -> Bool in
+                    if(banan.status == 0)
+                    {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                })
+            }
         }
         else{
             arrayBA = arrayBA.filter({ (banan) -> Bool in
@@ -153,6 +192,7 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
                         let stt = eachBA["Status"] as! Int
                         arrayBA.append(BanAn(id: id, soBA: soBA, motaBA: motaBA, KV: KV, Status: stt))
                     }
+                    self.arraybackup = arrayBA
                     self.DSBanan.reloadData()
                     print(arrayBA.count)
                 }
@@ -178,6 +218,16 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         let item = arrayBA[indexPath.row]
         cell.TenBanAn.text = item.soba
         cell.idBA = item.id
+        // hiển thị trạng thái bàn
+        if(item.status == 0 )
+        {
+            cell.TrangThai.text = "Còn trống"
+            cell.imgStatus.image = #imageLiteral(resourceName: "available.png")
+        }
+        else{
+            cell.imgStatus.image = #imageLiteral(resourceName: "using.png")
+            cell.TrangThai.text = "Có khách"
+        }
         return cell
     }
     //End table view
@@ -209,5 +259,71 @@ class DSBanAnController: UIViewController, UITableViewDataSource, UITableViewDel
         menu_bool = true
     }
     //End left menu
+    
+    @IBOutlet weak var itemTatCa: UITabBarItem!
+    @IBOutlet weak var itemTrong: UITabBarItem!
+    @IBOutlet weak var itemDaDat: UITabBarItem!
+    //TAB BAR
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//        let tabBarIndex = tabBarController.selectedIndex
+//        if(tabBarIndex == 1)
+//        {
+//            arrayBA = arrayBA.filter({ (banan) -> Bool in
+//                if ( banan.status == 0)
+//                {
+//                    return true
+//                }
+//                else{
+//                    return false
+//                }
+//            })
+//        }
+//        DSBanan.reloadData()
+//    }
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+        var url : String!
+        if(quanly)
+        {
+            url = urlPath_QL
+        }
+        else
+        {
+            url = urlPath_NV
+        }
+        
+        if item == itemTrong
+        {
+            arrayBA = arraybackup
+            arrayBA = arrayBA.filter({ (banan) -> Bool in
+                if(banan.status == 0)
+                {
+                    return true
+                }
+                else {
+                    return false
+                }
+            })
+        }
+        if item == itemDaDat
+        {
+            arrayBA = arraybackup
+            arrayBA = arrayBA.filter({ (banan) -> Bool in
+                if(banan.status == 1)
+                {
+                    return true
+                }
+                else {
+                    return false
+                }
+            })
+        }
+        if item == itemTatCa
+        {
+            ParseData(url: url)
+        }
+        DSBanan.reloadData()
+    }
+    
 
 }

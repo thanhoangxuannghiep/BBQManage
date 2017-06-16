@@ -730,7 +730,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="DSBanan" destination="sMH-E6-xWR" id="4EI-bg-i0o"/>
+                        <outlet property="itemDaDat" destination="Xhi-iS-XiH" id="B1u-bu-Pb0"/>
+                        <outlet property="itemTatCa" destination="h80-jR-qhz" id="pUg-si-Xjl"/>
+                        <outlet property="itemTrong" destination="pMX-gH-hAr" id="GP8-CG-uAA"/>
                         <outlet property="lblTenKhuVuc" destination="35p-3e-7Y9" id="gJo-jM-myo"/>
+                        <outlet property="tabbarFilter" destination="XWJ-Eg-Plh" id="dK7-Eu-eEQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
