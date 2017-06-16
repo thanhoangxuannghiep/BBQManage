@@ -47,4 +47,25 @@ extension UIViewController{
 //            }
 //        }))
     }
+    
+    func upImage(post: String?, urlPost: String? ) {
+        
+        
+        let url: URL = URL(string: urlPost!)!
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = post?.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if error != nil {
+                print(error)
+            }else {
+                let contentRun = String(data: data!, encoding: String.Encoding.utf8)
+                print(contentRun)
+            }
+        }
+        task.resume()
+    }
 }
