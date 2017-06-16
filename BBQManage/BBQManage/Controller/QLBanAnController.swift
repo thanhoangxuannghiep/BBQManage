@@ -158,6 +158,7 @@ class QLBanAnController: UIViewController, UITableViewDelegate, UITableViewDataS
             {
                 cell.txtKhuVuc.text = kv.tenkv
             }
+            
         }
         return cell
     }
